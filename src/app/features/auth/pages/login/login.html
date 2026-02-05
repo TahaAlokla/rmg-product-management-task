@@ -1,4 +1,4 @@
-<div class="login-container">
+<div class="login-container ">
   <mat-card class="login-card">
     <mat-card-header>
       <mat-card-title>Welcome Back</mat-card-title>
@@ -18,8 +18,10 @@
 
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Password</mat-label>
-          <input matInput [type]="'password'" formControlName="password">
-          <mat-icon matSuffix>lock</mat-icon>
+          <input matInput [type]="hidePassword() ? 'password' : 'text'" formControlName="password">
+          <button mat-icon-button matSuffix type="button" (click)="togglePasswordVisibility()" [attr.aria-label]="hidePassword() ? 'Show password' : 'Hide password'">
+            <mat-icon>{{ hidePassword() ? 'visibility' : 'visibility_off' }}</mat-icon>
+          </button>
           @if (loginForm.controls.password.invalid && loginForm.controls.password.touched) {
             <mat-error>Password is required</mat-error>
           }
@@ -31,7 +33,7 @@
           </div>
         }
 
-        <button mat-flat-button color="primary" type="submit" [disabled]="loginForm.invalid || loginForm.disabled" class="full-width submit-button">
+        <button mat-flat-button color="primary" type="submit" [disabled]="loginForm.invalid || loginForm.disabled" class="full-width submit-button ">
           @if (loginForm.disabled) {
             <span>Signing in...</span>
           } @else {

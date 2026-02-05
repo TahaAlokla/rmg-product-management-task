@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -36,6 +36,11 @@ export class Login {
   });
 
   errorMessage: string | null = null;
+  hidePassword = signal(true);
+
+  togglePasswordVisibility(): void {
+    this.hidePassword.update((v) => !v);
+  }
 
   login(): void {
     if (this.loginForm.invalid) {

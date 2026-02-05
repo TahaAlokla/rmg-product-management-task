@@ -1,3 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles: Tailwind + Angular Material theme (light/dark from material-theme.scss) */
 
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #165A50;
+  --color-background-dark: #141A18;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --mat-sys-primary: var(--color-primary);
+  font-family: 'Exo 2', sans-serif;
+}
+
+.dark {
+  --mat-sys-primary: var(--color-primary);
+  /* Ensure on-primary is light for dark mode (readable on primary bg) */
+  --mat-sys-on-primary: #ffffff;
+}
+
+.mat-mdc-unelevated-button:not(:disabled),
+.mat-mdc-raised-button:not(:disabled) {
+  color: var(--mat-sys-on-primary);
+}
