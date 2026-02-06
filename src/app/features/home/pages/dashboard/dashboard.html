@@ -1,1 +1,52 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+ <div class="welcome-section">
+  <h1>{{ 'common.dashboard.title' | transloco }}</h1>
+  <p>{{ 'common.dashboard.products_desc' | transloco }}</p>
+  <!-- Using a generic desc or subtitle if available, otherwise reuse or plain text. Actually keys exist. -->
+ </div>
+
+ <div class="cards-grid">
+  <!-- Product Management Card -->
+  <mat-card class="dashboard-card"
+   appearance="outlined">
+   <mat-card-header>
+    <div mat-card-avatar
+     class="card-avatar products-avatar">
+     <mat-icon>inventory_2</mat-icon>
+    </div>
+    <mat-card-title>{{ 'common.dashboard.products' | transloco }}</mat-card-title>
+    <mat-card-subtitle>{{ 'common.dashboard.products_desc' | transloco }}</mat-card-subtitle>
+   </mat-card-header>
+   <mat-card-actions align="end">
+    <a mat-button
+     color="primary"
+     routerLink="/products">
+     <span> {{ 'common.dashboard.products' | transloco }}</span>
+     <mat-icon iconPositionEnd
+     >arrow_forward</mat-icon>
+    </a>
+   </mat-card-actions>
+  </mat-card>
+
+  <!-- Invoice Creation Card -->
+  <mat-card class="dashboard-card"
+   appearance="outlined">
+   <mat-card-header>
+    <div mat-card-avatar
+     class="card-avatar invoices-avatar">
+     <mat-icon>receipt_long</mat-icon>
+    </div>
+    <mat-card-title>{{ 'common.dashboard.invoices' | transloco }}</mat-card-title>
+    <mat-card-subtitle>{{ 'common.dashboard.invoices_desc' | transloco }}</mat-card-subtitle>
+   </mat-card-header>
+   <mat-card-actions align="end">
+    <a mat-button
+     color="primary"
+     routerLink="/invoices">
+     <span> {{ 'common.dashboard.invoices' | transloco }}</span>
+     <mat-icon iconPositionEnd>arrow_forward</mat-icon>
+    </a>
+   </mat-card-actions>
+  </mat-card>
+ </div>
+</div>

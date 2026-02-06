@@ -11,19 +11,20 @@
 
 :host {
   position: fixed;
-  bottom: 76px;
+  bottom: 128px;
   inset-inline-end: 24px;
   z-index: 1000;
   display: block;
   width: 40px;
   height: 40px;
-  animation: floatBtnIn 0.3s ease-out 60ms forwards;
+  animation: floatBtnIn 0.3s ease-out 120ms forwards;
   opacity: 0;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 
-.language-toggle-btn {
+
+.sign-out-btn {
   width: 100%;
   height: 100%;
   min-width: 40px;
@@ -34,17 +35,18 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.lang-label {
-  font-size: 14px;
-  font-weight: 600;
+.sign-out-btn mat-icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
 }
 
-.language-toggle-btn:focus-visible {
+.sign-out-btn:focus-visible {
   outline: 2px solid var(--mat-sys-primary);
   outline-offset: 2px;
 }
 
-:host-context(.dark) .language-toggle-btn {
+:host-context(.dark) .sign-out-btn {
   background-color: #e0e0e0;
   color: black;
 }

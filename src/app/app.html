@@ -1,3 +1,6 @@
 <router-outlet />
-<app-language-toggle />
-<app-theme-toggle />
+@if (authService.currentUser()) {
+  <app-sign-out-button />
+  <app-language-toggle />
+  <app-theme-toggle />
+}

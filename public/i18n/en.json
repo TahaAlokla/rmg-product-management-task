@@ -1,5 +1,13 @@
 {
   "common":{
+    "dashboard": {
+      "title": "Dashboard",
+      "products": "Product Management",
+      "products_desc": "Manage your product inventory",
+      "invoices": "Invoice Creation",
+      "invoices_desc": "Create and manage invoices"
+    },
+    "logout": "Logout",
     "login":{
       "title": "Login",
       "email": "Email",
