@@ -41,8 +41,113 @@
       "id": 5,
       "name": "apple macbook pro",
       "description": "apple macbook pro description",
-      "price": 149.5,
+      "price": 2499.5,
       "imageUrl": "https://picsum.photos/id/1060/200/200"
+    },
+    {
+      "id": 6,
+      "name": "Premium Leather Portfolio",
+      "description": "Handcrafted leather portfolio for professionals.",
+      "price": 55.0,
+      "imageUrl": "https://picsum.photos/id/1073/200/200"
+    },
+    {
+      "id": 7,
+      "name": "Smart Fitness Tracker",
+      "description": "Track your steps, heart rate, and sleep quality.",
+      "price": 49.99,
+      "imageUrl": "https://picsum.photos/id/1074/200/200"
+    },
+    {
+      "id": 8,
+      "name": "Mechanical Keyboard",
+      "description": "RGB backlit mechanical keyboard with blue switches.",
+      "price": 89.9,
+      "imageUrl": "https://picsum.photos/id/1075/200/200"
+    },
+    {
+      "id": 9,
+      "name": "Wireless Gaming Mouse",
+      "description": "High-precision gaming mouse with customizable buttons.",
+      "price": 59.5,
+      "imageUrl": "https://picsum.photos/id/1076/200/200"
+    },
+    {
+      "id": 10,
+      "name": "Portable Power Bank",
+      "description": "20000mAh high-capacity portable charger.",
+      "price": 35.0,
+      "imageUrl": "https://picsum.photos/id/1077/200/200"
+    },
+    {
+      "id": 11,
+      "name": "LED Desk Lamp",
+      "description": "Adjustable brightness and color temperature lamp.",
+      "price": 24.99,
+      "imageUrl": "https://picsum.photos/id/1078/200/200"
+    },
+    {
+      "id": 12,
+      "name": "USB-C Hub Multiport Adapter",
+      "description": "7-in-1 USB-C hub with HDMI, USB 3.0, and SD card reader.",
+      "price": 39.0,
+      "imageUrl": "https://picsum.photos/id/1079/200/200"
+    },
+    {
+      "id": 13,
+      "name": "Standing Desk Converter",
+      "description": "Easily switch from sitting to standing while working.",
+      "price": 129.0,
+      "imageUrl": "https://picsum.photos/id/1080/200/200"
+    },
+    {
+      "id": 14,
+      "name": "Water-Resistant Backpack",
+      "description": "Durable backpack with laptop compartment and USB port.",
+      "price": 45.0,
+      "imageUrl": "https://picsum.photos/id/1081/200/200"
+    },
+    {
+      "id": 15,
+      "name": "Bluetooth Desktop Speakers",
+      "description": "Compact speakers with rich sound and deep bass.",
+      "price": 69.99,
+      "imageUrl": "https://picsum.photos/id/1082/200/200"
+    },
+    {
+      "id": 16,
+      "name": "External Hard Drive 2TB",
+      "description": "Reliable portable storage for your photos and files.",
+      "price": 79.5,
+      "imageUrl": "https://picsum.photos/id/1083/200/200"
+    },
+    {
+      "id": 17,
+      "name": "Adjustable Laptop Stand",
+      "description": "Ergonomic aluminum stand for better viewing angles.",
+      "price": 32.0,
+      "imageUrl": "https://picsum.photos/id/1084/200/200"
+    },
+    {
+      "id": 18,
+      "name": "Microfiber Mouse Pad",
+      "description": "Large mouse pad for smooth and precise movements.",
+      "price": 12.99,
+      "imageUrl": "https://picsum.photos/id/1000/200/200"
+    },
+    {
+      "id": 19,
+      "name": "Webcam with Microphone",
+      "description": "1080p full HD webcam for video calls and streaming.",
+      "price": 42.0,
+      "imageUrl": "https://picsum.photos/id/1001/200/200"
+    },
+    {
+      "id": 20,
+      "name": "Digital Drawing Tablet",
+      "description": "Expressive graphics tablet for digital art and design.",
+      "price": 110.0,
+      "imageUrl": "https://picsum.photos/id/1002/200/200"
     }
   ]
 }

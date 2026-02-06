@@ -61,9 +61,9 @@
 }
 
 .image-wrap {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
   overflow: hidden;
   border: 1px solid #ddd;
   background: #f8f8f8;
@@ -79,7 +79,19 @@
 
 img {
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
+}
+
+.actions-cell mat-icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.actions-cell button[mat-icon-button] {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
 }
 
 .name-cell {
@@ -120,7 +132,7 @@ img {
 
 :host ::ng-deep .mat-mdc-header-row {
   color: #666;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e80e0e;
 }
 
 :host-context(.dark) :host ::ng-deep .mat-mdc-header-row {
@@ -135,11 +147,11 @@ img {
 }
 
 :host ::ng-deep .mat-mdc-row {
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 :host-context(.dark) :host ::ng-deep .mat-mdc-row {
-  border-bottom: 1px solid #15241c;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 :host ::ng-deep .mat-mdc-row:last-child {
@@ -152,4 +164,15 @@ img {
 
 :host-context(.dark) :host ::ng-deep .mat-mdc-row:hover {
   background: #0f1913;
+}
+
+.products-paginator {
+  background: transparent;
+  border-top: 1px solid #e0e0e0;
+  border-radius: 0 0 16px 16px;
+}
+
+:host-context(.dark) .products-paginator {
+  border-top: 1px solid #1a2a22;
+  color: #dfe8e2;
 }

@@ -1,14 +1,16 @@
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { DecimalPipe, JsonPipe, NgFor, NgIf, NgOptimizedImage } from '@angular/common';
-import { MatTableModule } from '@angular/material/table';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { ProductService } from '../../services/product.service';
 import type { Product } from '../../models/product';
 import { ProductDialog } from '../../components/product-dialog/product-dialog';
 import { ConfirmDialogComponent } from '../../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { TranslocoModule } from '@jsverse/transloco';
+import { ViewChild, effect } from '@angular/core';
 
 @Component({
   selector: 'app-products-list',
@@ -17,6 +19,7 @@ import { TranslocoModule } from '@jsverse/transloco';
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
+    MatPaginatorModule,
     NgOptimizedImage,
     DecimalPipe,
     TranslocoModule
@@ -28,6 +31,23 @@ import { TranslocoModule } from '@jsverse/transloco';
 export class ProductsList {
   protected readonly productService = inject(ProductService);
   private _dialog = inject(MatDialog);
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  dataSource = new MatTableDataSource<Product>([]);
+
+  constructor() {
+    effect(() => {
+      this.dataSource.data = this.productService.products();
+      if (this.paginator) {
+        this.dataSource.paginator = this.paginator;
+      }
+    });
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
 
   openAdd(): void {
     const ref = this._dialog.open(ProductDialog, {

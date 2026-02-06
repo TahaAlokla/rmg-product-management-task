@@ -38,6 +38,14 @@
         "actions":"Actions"
       }
     },
+    "paginator": {
+      "itemsPerPageLabel": "Items per page:",
+      "nextPageLabel": "Next page",
+      "previousPageLabel": "Previous page",
+      "firstPageLabel": "First page",
+      "lastPageLabel": "Last page",
+      "ofLabel": "of"
+    },
     "logout": "Logout",
     "login":{
       "title": "Login",

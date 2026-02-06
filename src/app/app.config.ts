@@ -7,6 +7,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideTransloco } from '@jsverse/transloco';
 import { TranslocoHttpLoader } from './core/transloco-loader';
 import { provideHttpClient } from '@angular/common/http';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { TranslocoPaginatorIntlService } from './core/services/transloco-paginator-intl.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,6 +16,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAnimationsAsync(),
     provideHttpClient(),
+
     provideTransloco({
       config: {
         availableLangs: ['en', 'ar'],
@@ -24,5 +27,6 @@ export const appConfig: ApplicationConfig = {
       },
       loader: TranslocoHttpLoader,
     }),
+    { provide: MatPaginatorIntl, useClass: TranslocoPaginatorIntlService },
   ]
 };

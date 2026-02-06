@@ -38,6 +38,14 @@
         "actions":"الإجراءات"
       }
     },
+    "paginator": {
+      "itemsPerPageLabel": "العناصر لكل صفحة:",
+      "nextPageLabel": "الصفحة التالية",
+      "previousPageLabel": "الصفحة السابقة",
+      "firstPageLabel": "الصفحة الأولى",
+      "lastPageLabel": "الصفحة الأخيرة",
+      "ofLabel": "من"
+    },
     "logout": "تسجيل الخروج",
     "login":{
       "title": "تسجيل الدخول",
