@@ -7,6 +7,30 @@
       "invoices": "إنشاء الفواتير",
       "invoices_desc": "إنشاء وإدارة الفواتير"
     },
+    "products": {
+      "title": "إدارة المنتجات",
+      "add": "إضافة منتج",
+      "image": "الصورة",
+      "name": "الاسم",
+      "description": "الوصف",
+      "price": "السعر",
+      "actions": "الإجراءات",
+      "edit": "تعديل",
+      "delete": "حذف",
+      "edit_aria": "تعديل المنتج",
+      "delete_aria": "حذف المنتج",
+      "dialog": {
+        "title_add": "إضافة منتج",
+        "title_edit": "تعديل منتج",
+        "field_imageUrl": "رابط الصورة",
+        "field_name": "الاسم",
+        "field_description": "الوصف",
+        "field_price": "السعر",
+        "save": "حفظ",
+        "cancel": "إلغاء",
+        "actions":"الإجراءات"
+      }
+    },
     "logout": "تسجيل الخروج",
     "login":{
       "title": "تسجيل الدخول",

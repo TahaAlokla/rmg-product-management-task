@@ -1,1 +1,58 @@
-<p>products-list works!</p>
+<div class="products-container">
+  <h2> {{ 'common.products.title' | transloco }}</h2>
+  <div class="toolbar">
+    <button mat-flat-button color="primary" (click)="openAdd()">
+      {{ 'common.products.dialog.title_add' | transloco }}
+      <mat-icon iconPositionEnd>add</mat-icon>
+    </button>
+  </div>
+  <table
+    mat-table
+    [dataSource]="productService.products()"
+    class="mat-elevation-z1 products-table"
+    aria-label="Products list"
+  >
+    <ng-container matColumnDef="image">
+      <th mat-header-cell *matHeaderCellDef> {{ 'common.products.dialog.field_imageUrl' | transloco }}</th>
+      <td mat-cell *matCellDef="let p">
+        <img [ngSrc]="p?.imageUrl" width="48" height="48" alt="{{ p.name }}" />
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> {{ 'common.products.dialog.field_name' | transloco }}</th>
+      <td mat-cell *matCellDef="let p">
+        {{ p.name }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> {{ 'common.products.dialog.field_description' | transloco }}</th>
+      <td mat-cell *matCellDef="let p">
+        {{ p.description }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> {{ 'common.products.dialog.field_price' | transloco }} </th>
+      <td mat-cell *matCellDef="let p">{{ p.price | number: '1.2-2' }} $</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef class="actions-header"> {{ 'common.products.dialog.actions' | transloco }}</th>
+      <td mat-cell *matCellDef="let p" class="actions-cell">
+        <button mat-icon-button aria-label="Edit product" (click)="openEdit(p)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Delete product" (click)="deleteProduct(p.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['image', 'name', 'description', 'price', 'actions']"></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; columns: ['image', 'name', 'description', 'price', 'actions']"
+    ></tr>
+  </table>
+</div>

@@ -1,0 +1,39 @@
+:host {
+  display: block;
+}
+
+.products-container {
+  display: grid;
+  gap: 16px;
+}
+
+.create-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+.field {
+  width: 100%;
+}
+
+.products-table {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.actions-header,
+.actions-cell {
+  text-align: right;
+}
+
+.inline-input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--mat-sys-on-surface);
+}

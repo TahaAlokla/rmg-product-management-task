@@ -7,6 +7,30 @@
       "invoices": "Invoice Creation",
       "invoices_desc": "Create and manage invoices"
     },
+    "products": {
+      "title": "Product Management",
+      "add": "Add Product",
+      "image": "Image",
+      "name": "Name",
+      "description": "Description",
+      "price": "Price",
+      "actions": "Actions",
+      "edit": "Edit",
+      "delete": "Delete",
+      "edit_aria": "Edit product",
+      "delete_aria": "Delete product",
+      "dialog": {
+        "title_add": "Add Product",
+        "title_edit": "Edit Product",
+        "field_imageUrl": "Image URL",
+        "field_name": "Name",
+        "field_description": "Description",
+        "field_price": "Price",
+        "save": "Save",
+        "cancel": "Cancel",
+        "actions":"Actions"
+      }
+    },
     "logout": "Logout",
     "login":{
       "title": "Login",

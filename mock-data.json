@@ -7,5 +7,28 @@
       "email": "test@example.com",
       "token": "fake-jwt-token"
     }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Charging Pad",
+      "description": "Fast wireless charger compatible with most smartphones.",
+      "price": 29.99,
+      "imageUrl": "https://picsum.photos/id/1062/200/200"
+    },
+    {
+      "id": 2,
+      "name": "Ergonomic Office Chair",
+      "description": "Lumbar support and adjustable height for comfortable seating.",
+      "price": 199.0,
+      "imageUrl": "https://picsum.photos/id/1011/200/200"
+    },
+    {
+      "id": 3,
+      "name": "Noise-Canceling Headphones",
+      "description": "Over-ear headphones with active noise cancellation.",
+      "price": 149.5,
+      "imageUrl": "https://picsum.photos/id/1060/200/200"
+    }
   ]
 }

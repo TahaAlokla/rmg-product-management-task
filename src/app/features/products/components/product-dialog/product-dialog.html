@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>
+  @if (_data.product) { {{ 'common.products.dialog.title_edit' | transloco }} } @else { {{ 'common.products.dialog.title_add' | transloco }} }
+</h2>
+<div mat-dialog-content class="dialog-content">
+  <form [formGroup]="form" (ngSubmit)="save()" class="dialog-form">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>{{ 'common.products.dialog.field_name' | transloco }}</mat-label>
+      <input matInput formControlName="name" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>{{ 'common.products.dialog.field_description' | transloco }}</mat-label>
+      <input matInput formControlName="description" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>{{ 'common.products.dialog.field_price' | transloco }}</mat-label>
+      <input matInput type="number" formControlName="price" required min="0" step="0.01" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>{{ 'common.products.dialog.field_imageUrl' | transloco }}</mat-label>
+      <input matInput formControlName="imageUrl" required />
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="cancel()">{{ 'common.products.dialog.cancel' | transloco }}</button>
+  <button mat-flat-button color="primary" [disabled]="form.invalid" (click)="save()">{{ 'common.products.dialog.save' | transloco }}</button>
+</div>
