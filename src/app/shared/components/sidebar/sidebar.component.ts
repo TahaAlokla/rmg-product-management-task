@@ -1,6 +1,6 @@
-import { Component, ChangeDetectionStrategy, input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -30,5 +30,13 @@ export interface NavItem {
  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SidebarComponent {
+ private _router = inject(Router);
  readonly navItems = input.required<NavItem[]>();
+
+ isChildActive(item: NavItem): boolean {
+  if (!item.children || item.children.length === 0) {
+   return false;
+  }
+  return item.children.some(child => child.route && this._router.url.includes(child.route));
+ }
 }

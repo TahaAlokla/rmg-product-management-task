@@ -13,7 +13,7 @@
 }
 
 .nav-label {
- margin-inline-start: 16px;
+ margin-inline-start: 12px;
  font-weight: 600;
 }
 
@@ -27,5 +27,30 @@ mat-panel-title {
 }
 
 mat-icon {
- margin-inline-end: 16px;
+ margin-inline-end: 12px;
+}
+
+.active-parent ::ng-deep .mat-expansion-panel-header {
+ background-color: rgba(22, 90, 80, 0.1) !important;
+}
+
+.active-parent mat-panel-title {
+ color: var(--mat-sys-primary, #165a50);
+ font-weight: 700;
+}
+
+.child-nav-item {
+ margin-top: 4px;
+ margin-bottom: 4px;
+ font-size: 14px;
+ font-weight: 500;
+}
+
+.child-nav-item:last-child {
+ margin-bottom: 0;
+}
+
+mat-nav-list[dense] {
+ padding-top: 8px;
+ padding-bottom: 8px;
 }

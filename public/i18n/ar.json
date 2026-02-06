@@ -5,7 +5,9 @@
       "products": "إدارة المنتجات",
       "products_desc": "إدارة مخزون المنتجات",
       "invoices": "إنشاء الفواتير",
-      "invoices_desc": "إنشاء وإدارة الفواتير"
+      "invoices_desc": "إنشاء وإدارة الفواتير",
+      "invoices-list": "قائمة الفواتير",
+      "add-invoice": "إضافة فاتورة"
     },
     "dialog": {
       "delete_title": "تأكيد الحذف",
@@ -36,6 +38,72 @@
         "save": "حفظ",
         "cancel": "إلغاء",
         "actions":"الإجراءات"
+      }
+    },
+    "invoices": {
+      "title": "الفواتير",
+      "home": "الرئيسية",
+      "breadcrumb_invoice": "الفواتير",
+      "stats": {
+        "total": "الإجمالي",
+        "shipped": "تم الشحن",
+        "delivered": "تم التسليم",
+        "pending": "قيد الانتظار",
+        "invoices": "فواتير"
+      },
+      "search_placeholder": "البحث في الفواتير",
+      "add_invoice": "إضافة فاتورة",
+      "delete_message": "هل أنت متأكد أنك تريد حذف الفاتورة رقم {{id}} من {{billFrom}}؟",
+      "table": {
+        "id": "الرقم",
+        "bill_from": "من",
+        "bill_to": "إلى",
+        "total_cost": "التكلفة الإجمالية",
+        "status": "الحالة",
+        "action": "الإجراءات"
+      },
+      "status": {
+        "shipped": "تم الشحن",
+        "delivered": "تم التسليم",
+        "pending": "قيد الانتظار"
+      },
+      "actions": {
+        "edit": "تعديل الفاتورة",
+        "view": "عرض الفاتورة",
+        "delete": "حذف الفاتورة"
+      },
+      "form": {
+        "add_invoice": "إضافة فاتورة",
+        "edit_invoice": "تعديل الفاتورة",
+        "save_invoice": "حفظ الفاتورة",
+        "cancel": "إلغاء",
+        "order_status": "حالة الطلب",
+        "order_date": "تاريخ الطلب",
+        "bill_from": "من",
+        "bill_from_placeholder": "أدخل عنوان المرسل",
+        "bill_from_required": "حقل من مطلوب",
+        "bill_to": "إلى",
+        "bill_to_placeholder": "أدخل عنوان المستلم",
+        "bill_to_required": "حقل إلى مطلوب",
+        "items": "العناصر",
+        "item_name": "اسم العنصر",
+        "unit_price": "سعر الوحدة",
+        "units": "الوحدات",
+        "total_price": "السعر الإجمالي",
+        "add_item": "إضافة عنصر",
+        "subtotal": "المجموع الفرعي",
+        "vat": "ضريبة القيمة المضافة",
+        "grand_total": "المجموع الكلي"
+      },
+      "view": {
+        "title": "تفاصيل الفاتورة",
+        "back": "العودة إلى القائمة",
+        "edit": "تعديل الفاتورة",
+        "status": "الحالة",
+        "bill_from": "من",
+        "bill_to": "إلى",
+        "total_cost": "التكلفة الإجمالية",
+        "items": "العناصر"
       }
     },
     "paginator": {

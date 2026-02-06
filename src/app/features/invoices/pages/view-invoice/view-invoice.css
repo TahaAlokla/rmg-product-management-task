@@ -1,0 +1,275 @@
+:host {
+ display: block;
+}
+
+.view-invoice-container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 2rem;
+}
+
+.invoice-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: flex-start;
+ margin-bottom: 2rem;
+ flex-wrap: wrap;
+ gap: 1rem;
+}
+
+.header-left {
+ flex: 1;
+}
+
+.invoice-title {
+ font-size: 1.75rem;
+ font-weight: 700;
+ color: #0f172a;
+ margin: 0 0 0.5rem 0;
+}
+
+:host-context(.dark) .invoice-title {
+ color: #ffffff;
+}
+
+.invoice-number {
+ font-size: 1.125rem;
+ color: #64748b;
+ font-weight: 600;
+}
+
+:host-context(.dark) .invoice-number {
+ color: #9ca3af;
+}
+
+.header-actions {
+ display: flex;
+ gap: 1rem;
+}
+
+.invoice-details {
+ background: #ffffff;
+ border-radius: 16px;
+ padding: 2rem;
+ border: 1px solid #e2e8f0;
+}
+
+:host-context(.dark) .invoice-details {
+ background: rgba(255, 255, 255, 0.03);
+ border-color: rgba(255, 255, 255, 0.1);
+}
+
+.detail-section {
+ display: flex;
+ flex-direction: column;
+ gap: 1.5rem;
+}
+
+.detail-row {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding-bottom: 1rem;
+ border-bottom: 1px solid #f1f5f9;
+}
+
+:host-context(.dark) .detail-row {
+ border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.detail-row:last-child {
+ border-bottom: none;
+}
+
+.items-section {
+ margin: 2rem 0;
+}
+
+.section-title {
+ font-size: 1.125rem;
+ font-weight: 600;
+ color: #0f172a;
+ margin-bottom: 1rem;
+}
+
+:host-context(.dark) .section-title {
+ color: #ffffff;
+}
+
+.items-table {
+ background: #f8fafc;
+ border-radius: 12px;
+ overflow: hidden;
+ border: 1px solid #e2e8f0;
+}
+
+:host-context(.dark) .items-table {
+ background: rgba(255, 255, 255, 0.02);
+ border-color: rgba(255, 255, 255, 0.05);
+}
+
+.items-header,
+.items-row {
+ display: grid;
+ grid-template-columns: 50px 2fr 1fr 1fr 1fr;
+ gap: 1rem;
+ padding: 1rem;
+ align-items: center;
+}
+
+.items-header {
+ background: #e2e8f0;
+ font-weight: 600;
+ font-size: 0.813rem;
+ color: #475569;
+ text-transform: uppercase;
+ letter-spacing: 0.05em;
+}
+
+:host-context(.dark) .items-header {
+ background: rgba(255, 255, 255, 0.05);
+ color: #9ca3af;
+}
+
+.items-row {
+ border-bottom: 1px solid #e2e8f0;
+}
+
+:host-context(.dark) .items-row {
+ border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.items-row:last-child {
+ border-bottom: none;
+}
+
+.col-number {
+ font-weight: 600;
+ color: #64748b;
+}
+
+:host-context(.dark) .col-number {
+ color: #9ca3af;
+}
+
+.col-name {
+ font-weight: 500;
+}
+
+.col-price,
+.col-units,
+.col-total {
+ text-align: right;
+ font-weight: 500;
+}
+
+.detail-label {
+ font-weight: 600;
+ color: #64748b;
+}
+
+:host-context(.dark) .detail-label {
+ color: #9ca3af;
+}
+
+.detail-value {
+ font-weight: 500;
+ color: #0f172a;
+}
+
+:host-context(.dark) .detail-value {
+ color: #ffffff;
+}
+
+.total-row {
+ padding-top: 1rem;
+ border-top: 2px solid #e2e8f0;
+}
+
+:host-context(.dark) .total-row {
+ border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.total-value {
+ font-size: 1.5rem;
+ font-weight: 700;
+ color: #10b981;
+}
+
+:host-context(.dark) .total-value {
+ color: #34d399;
+}
+
+.status-badge {
+ display: inline-flex;
+ align-items: center;
+ padding: 0.5rem 1rem;
+ border-radius: 24px;
+ font-size: 0.875rem;
+ font-weight: 600;
+ text-transform: capitalize;
+}
+
+.status-badge.status-shipped {
+ background: #dbeafe;
+ color: #1e40af;
+ border: 1px solid #93c5fd;
+}
+
+:host-context(.dark) .status-badge.status-shipped {
+ background: rgba(59, 130, 246, 0.2);
+ color: #60a5fa;
+ border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.status-badge.status-delivered {
+ background: #cffafe;
+ color: #0e7490;
+ border: 1px solid #67e8f9;
+}
+
+:host-context(.dark) .status-badge.status-delivered {
+ background: rgba(6, 182, 212, 0.2);
+ color: #22d3ee;
+ border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.status-badge.status-pending {
+ background: #fed7aa;
+ color: #c2410c;
+ border: 1px solid #fb923c;
+}
+
+:host-context(.dark) .status-badge.status-pending {
+ background: rgba(251, 146, 60, 0.2);
+ color: #fb923c;
+ border: 1px solid rgba(251, 146, 60, 0.3);
+}
+
+@media (max-width: 768px) {
+ .view-invoice-container {
+  padding: 1rem;
+ }
+
+ .invoice-header {
+  flex-direction: column;
+ }
+
+ .header-actions {
+  width: 100%;
+ }
+
+ .header-actions button {
+  flex: 1;
+ }
+
+ .invoice-details {
+  padding: 1.5rem;
+ }
+
+ .detail-row {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+ }
+}

@@ -1,8 +1,9 @@
-<mat-nav-list class=" space-y-2 px-4">
+<mat-nav-list class=" space-y-1 ">
  @for (item of navItems(); track item.label) {
  @if (item.children && item.children.length > 0) {
- <mat-expansion-panel class="mat-elevation-z0 ">
-  <mat-expansion-panel-header>
+ <mat-expansion-panel class="mat-elevation-z0 "
+  [class.active-parent]="isChildActive(item)">
+  <mat-expansion-panel-header class="px-0">
    <mat-panel-title>
     @if (item.icon) {
     <mat-icon>{{ item.icon }}</mat-icon>
@@ -15,6 +16,8 @@
    @for (child of item.children; track child.label) {
    <a mat-list-item
     [routerLink]="child.route"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="child-nav-item"
     routerLinkActive="active-link">
     @if (child.icon) {
     <mat-icon matListItemIcon>{{ child.icon }}</mat-icon>
@@ -27,6 +30,8 @@
  } @else {
  <a mat-list-item
   [routerLink]="item.route"
+  [routerLinkActiveOptions]="{ exact: true }"
+  class=""
   routerLinkActive="active-link">
   @if (item.icon) {
   <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>

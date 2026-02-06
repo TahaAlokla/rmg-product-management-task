@@ -30,6 +30,12 @@ export class DashboardLayoutPage {
   navItems: NavItem[] = [
     { label: 'common.dashboard.title', icon: 'dashboard', route: '/dashboard' },
     { label: 'common.dashboard.products', icon: 'inventory_2', route: '/products' },
-    { label: 'common.dashboard.invoices', icon: 'receipt_long', route: '/invoices' },
+    {
+      label: 'common.dashboard.invoices', icon: 'receipt_long', route: '/invoices', children: [
+        { label: 'common.dashboard.invoices-list', icon: 'list', route: '/invoices' },
+        { label: 'common.dashboard.add-invoice', icon: 'add', route: '/invoices/add' },
+      ]
+    },
+
   ];
 }

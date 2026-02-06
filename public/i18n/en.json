@@ -5,7 +5,9 @@
       "products": "Product Management",
       "products_desc": "Manage your product inventory",
       "invoices": "Invoice Creation",
-      "invoices_desc": "Create and manage invoices"
+      "invoices_desc": "Create and manage invoices",
+      "invoices-list": "Invoices List",
+      "add-invoice": "Add Invoice"
     },
     "dialog": {
       "delete_title": "Delete Confirmation !",
@@ -36,6 +38,72 @@
         "save": "Save",
         "cancel": "Cancel",
         "actions":"Actions"
+      }
+    },
+    "invoices": {
+      "title": "Invoice",
+      "home": "Home",
+      "breadcrumb_invoice": "Invoice",
+      "stats": {
+        "total": "Total",
+        "shipped": "Shipped",
+        "delivered": "Delivered",
+        "pending": "Pending",
+        "invoices": "Invoices"
+      },
+      "search_placeholder": "Search invoice",
+      "add_invoice": "Add Invoice",
+      "delete_message": "Are you sure you want to delete invoice #{{id}} from {{billFrom}}?",
+      "table": {
+        "id": "Id",
+        "bill_from": "Bill From",
+        "bill_to": "Bill To",
+        "total_cost": "Total Cost",
+        "status": "Status",
+        "action": "Action"
+      },
+      "status": {
+        "shipped": "shipped",
+        "delivered": "delivered",
+        "pending": "pending"
+      },
+      "actions": {
+        "edit": "Edit invoice",
+        "view": "View invoice",
+        "delete": "Delete invoice"
+      },
+      "form": {
+        "add_invoice": "Add Invoice",
+        "edit_invoice": "Edit Invoice",
+        "save_invoice": "Save Invoice",
+        "cancel": "Cancel",
+        "order_status": "Order Status",
+        "order_date": "Order Date",
+        "bill_from": "Bill From",
+        "bill_from_placeholder": "Enter From Address",
+        "bill_from_required": "Bill From is required",
+        "bill_to": "Bill To",
+        "bill_to_placeholder": "Enter To Address",
+        "bill_to_required": "Bill To is required",
+        "items": "Items",
+        "item_name": "Item Name",
+        "unit_price": "Unit Price",
+        "units": "Units",
+        "total_price": "Total Price",
+        "add_item": "Add Item",
+        "subtotal": "Sub total",
+        "vat": "Total Vat",
+        "grand_total": "Grand Total"
+      },
+      "view": {
+        "title": "Invoice Details",
+        "back": "Back to List",
+        "edit": "Edit Invoice",
+        "status": "Status",
+        "bill_from": "Bill From",
+        "bill_to": "Bill To",
+        "total_cost": "Total Cost",
+        "items": "Items"
       }
     },
     "paginator": {

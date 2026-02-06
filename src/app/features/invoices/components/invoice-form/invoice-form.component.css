@@ -1,0 +1,277 @@
+:host {
+ display: block;
+}
+
+.invoice-form-container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 2rem;
+}
+
+/* Header */
+.form-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: flex-start;
+ margin-bottom: 2rem;
+ flex-wrap: wrap;
+ gap: 1rem;
+}
+
+.header-left {
+ flex: 1;
+}
+
+.form-title {
+ font-size: 1.75rem;
+ font-weight: 700;
+ color: #0f172a;
+ margin: 0 0 0.5rem 0;
+}
+
+:host-context(.dark) .form-title {
+ color: #ffffff;
+}
+
+.invoice-number {
+ font-size: 1.125rem;
+ color: #64748b;
+ font-weight: 600;
+}
+
+:host-context(.dark) .invoice-number {
+ color: #9ca3af;
+}
+
+.header-actions {
+ display: flex;
+ gap: 1rem;
+ align-items: center;
+}
+
+.cancel-button {
+ border-color: #e2e8f0 !important;
+ color: #64748b !important;
+}
+
+:host-context(.dark) .cancel-button {
+ border-color: rgba(255, 255, 255, 0.2) !important;
+ color: #9ca3af !important;
+}
+
+.save-button {
+ background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+ color: white !important;
+}
+
+/* Form Sections */
+.form-section {
+ background: #ffffff;
+ border-radius: 16px;
+ padding: 1.5rem;
+ margin-bottom: 1.5rem;
+ border: 1px solid #e2e8f0;
+}
+
+:host-context(.dark) .form-section {
+ background: rgba(255, 255, 255, 0.03);
+ border-color: rgba(255, 255, 255, 0.1);
+}
+
+.section-row {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: 1.5rem;
+}
+
+.form-field {
+ width: 100%;
+}
+
+/* Items Table */
+.items-section {
+ padding: 0;
+ overflow: hidden;
+}
+
+.items-table {
+ width: 100%;
+}
+
+.table-header,
+.table-row {
+ display: grid;
+ grid-template-columns: 50px 2fr 1fr 1fr 1fr 60px;
+ gap: 1rem;
+ align-items: center;
+ padding: 1rem 1.5rem;
+}
+
+.table-header {
+ background: #f8fafc;
+ font-weight: 600;
+ font-size: 0.813rem;
+ color: #475569;
+ text-transform: uppercase;
+ letter-spacing: 0.05em;
+ border-bottom: 2px solid #e2e8f0;
+}
+
+:host-context(.dark) .table-header {
+ background: rgba(255, 255, 255, 0.05);
+ color: #9ca3af;
+ border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.table-row {
+ border-bottom: 1px solid #f1f5f9;
+}
+
+:host-context(.dark) .table-row {
+ border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.table-row:last-child {
+ border-bottom: none;
+}
+
+.col-number {
+ font-weight: 600;
+ color: #64748b;
+}
+
+:host-context(.dark) .col-number {
+ color: #9ca3af;
+}
+
+.item-field {
+ width: 100%;
+ margin: 0;
+}
+
+.item-field ::ng-deep .mat-mdc-form-field-subscript-wrapper {
+ display: none;
+}
+
+.total-value {
+ font-weight: 600;
+ color: #0f172a;
+}
+
+:host-context(.dark) .total-value {
+ color: #ffffff;
+}
+
+.remove-button {
+ color: #ef4444;
+}
+
+.remove-button:disabled {
+ color: #cbd5e1;
+}
+
+.add-item-button {
+ margin: 1.5rem;
+ border-color: #10b981 !important;
+ color: #10b981 !important;
+}
+
+:host-context(.dark) .add-item-button {
+ border-color: #34d399 !important;
+ color: #34d399 !important;
+}
+
+/* Totals */
+.totals-section {
+ max-width: 400px;
+ margin-left: auto;
+}
+
+.totals-row {
+ display: flex;
+ justify-content: space-between;
+ padding: 0.75rem 0;
+ border-bottom: 1px solid #f1f5f9;
+}
+
+:host-context(.dark) .totals-row {
+ border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.totals-row:last-child {
+ border-bottom: none;
+}
+
+.totals-label {
+ font-weight: 500;
+ color: #64748b;
+}
+
+:host-context(.dark) .totals-label {
+ color: #9ca3af;
+}
+
+.totals-value {
+ font-weight: 600;
+ color: #0f172a;
+}
+
+:host-context(.dark) .totals-value {
+ color: #ffffff;
+}
+
+.grand-total {
+ padding-top: 1rem;
+ border-top: 2px solid #e2e8f0;
+}
+
+:host-context(.dark) .grand-total {
+ border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.grand-total .totals-label,
+.grand-total .totals-value {
+ font-size: 1.125rem;
+ font-weight: 700;
+ color: #10b981;
+}
+
+:host-context(.dark) .grand-total .totals-label,
+:host-context(.dark) .grand-total .totals-value {
+ color: #34d399;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+ .invoice-form-container {
+  padding: 1rem;
+ }
+
+ .form-header {
+  flex-direction: column;
+ }
+
+ .header-actions {
+  width: 100%;
+ }
+
+ .header-actions button {
+  flex: 1;
+ }
+
+ .section-row {
+  grid-template-columns: 1fr;
+ }
+
+ .table-header,
+ .table-row {
+  grid-template-columns: 40px 1.5fr 0.8fr 0.8fr 1fr 50px;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+ }
+
+ .table-header {
+  font-size: 0.75rem;
+ }
+}
