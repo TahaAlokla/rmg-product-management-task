@@ -1,0 +1,24 @@
+{
+  "common":{
+    "login":{
+      "title": "تسجيل الدخول",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "login": "تسجيل الدخول",
+      "signup": "تسجيل مستخدم جديد",
+      "signup_title": "تسجيل مستخدم جديد",
+      "signup_description": "تسجيل مستخدم جديد",
+      "signup_button": "تسجيل مستخدم جديد",
+      "signup_button_description": "تسجيل مستخدم جديد",
+      "description": "تسجيل الدخول للاستمرار",
+      "email_error": "البريد الإلكتروني غير صالح",
+      "password_error": "كلمة المرور غير صالحة",
+      "signing_in": "جاري تسجيل الدخول",
+      "signing_in_description": "جاري تسجيل الدخول",
+      "signing_in_button": "تسجيل الدخول",
+      "signing_in_button_description": "تسجيل الدخول"
+
+    }
+  }
+
+}

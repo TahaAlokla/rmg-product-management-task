@@ -1,0 +1,22 @@
+.language-toggle-btn {
+  position: fixed;
+  bottom: 76px;
+  inset-inline-end: 24px;
+  z-index: 1000;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  background-color: var(--color-primary, #165a50);
+  color: white;
+}
+
+.lang-label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+:host-context(.dark) .language-toggle-btn {
+  background-color: #e0e0e0;
+  color: black;
+}

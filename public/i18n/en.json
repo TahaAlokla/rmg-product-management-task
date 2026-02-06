@@ -1,0 +1,23 @@
+{
+  "common":{
+    "login":{
+      "title": "Login",
+      "email": "Email",
+      "username": "Username",
+      "password": "Password",
+      "login": "Login",
+      "signup": "Signup",
+      "signup_title": "Signup",
+      "signup_description": "Signup",
+      "signup_button": "Signup",
+      "signup_button_description": "Signup",
+      "description": "Login to continue",
+      "email_error": "Please enter a valid email",
+      "password_error": "Password is required",
+      "signing_in": "Signing in...",
+      "signing_in_description": "Signing in...",
+      "signing_in_button": "Sign In",
+      "signing_in_button_description": "Sign In"
+    }
+  }
+}
