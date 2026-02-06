@@ -2,7 +2,7 @@
  <div class="welcome-section">
   <h1>{{ 'common.dashboard.title' | transloco }}</h1>
   <p>{{ 'common.dashboard.products_desc' | transloco }}</p>
-  <!-- Using a generic desc or subtitle if available, otherwise reuse or plain text. Actually keys exist. -->
+
  </div>
 
  <div class="cards-grid">
@@ -22,7 +22,8 @@
      color="primary"
      routerLink="/products">
      <span> {{ 'common.dashboard.products' | transloco }}</span>
-     <mat-icon iconPositionEnd class="rtl:rotate-180">arrow_forward</mat-icon>
+     <mat-icon iconPositionEnd
+      class="rtl:rotate-180">arrow_forward</mat-icon>
     </a>
    </mat-card-actions>
   </mat-card>
@@ -43,7 +44,8 @@
      color="primary"
      routerLink="/invoices">
 
-     <mat-icon iconPositionEnd class="rtl:rotate-180">arrow_forward</mat-icon>
+     <mat-icon iconPositionEnd
+      class="rtl:rotate-180">arrow_forward</mat-icon>
      <span> {{ 'common.dashboard.invoices' | transloco }}</span>
     </a>
    </mat-card-actions>

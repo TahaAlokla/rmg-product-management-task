@@ -1,0 +1,31 @@
+.active-link {
+ background-color: rgba(22, 90, 80, 0.5);
+
+ /* border-right: 3px solid var(--mat-sys-primary, #165a50); */
+ mat-icon {
+  color: var(--mat-sys-primary, #165a50);
+ }
+}
+
+:host {
+ display: block;
+ height: 100%;
+}
+
+.nav-label {
+ margin-left: 16px;
+ font-weight: 600;
+}
+
+mat-expansion-panel-header {
+ /* padding: 0 16px; */
+}
+
+mat-panel-title {
+ display: flex;
+ align-items: center;
+}
+
+mat-icon {
+ margin-right: 16px;
+}
