@@ -29,6 +29,20 @@
       "description": "Over-ear headphones with active noise cancellation.",
       "price": 149.5,
       "imageUrl": "https://picsum.photos/id/1060/200/200"
+    },
+     {
+      "id": 4,
+      "name": "apple macbook air",
+      "description": "apple macbook air description",
+      "price": 2000,
+      "imageUrl": "https://picsum.photos/id/1060/200/200"
+    },
+     {
+      "id": 5,
+      "name": "apple macbook pro",
+      "description": "apple macbook pro description",
+      "price": 149.5,
+      "imageUrl": "https://picsum.photos/id/1060/200/200"
     }
   ]
 }

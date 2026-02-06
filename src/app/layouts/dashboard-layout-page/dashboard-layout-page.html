@@ -9,7 +9,8 @@
     <span class="spacer"></span>
   </mat-toolbar>
 
-  <mat-sidenav-container class="dashboard-sidenav-container ">
+  <mat-sidenav-container class="dashboard-sidenav-container "
+    [dir]="dir()">
     <mat-sidenav #sidenav
       mode="side"
       opened
@@ -18,7 +19,7 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="dashboard-content">
-      <main class="content-wrapper">
+      <main class="content-wrapper ">
         <router-outlet></router-outlet>
       </main>
     </mat-sidenav-content>

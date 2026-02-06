@@ -13,7 +13,7 @@
 }
 
 .nav-label {
- margin-left: 16px;
+ margin-inline-start: 16px;
  font-weight: 600;
 }
 
@@ -27,5 +27,5 @@ mat-panel-title {
 }
 
 mat-icon {
- margin-right: 16px;
+ margin-inline-end: 16px;
 }

@@ -4,10 +4,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { TranslocoModule } from '@jsverse/transloco';
+
 import { SidebarComponent, NavItem } from '../../shared/components/sidebar/sidebar.component';
-import { AuthService } from '../../core/auth/services/auth-service';
-import { ThemeToggleComponent } from '../../shared/components/theme-toggle/theme-toggle.component';
+import { LanguageDirectionService } from '../../core/services/language-direction.service';
+;
 
 @Component({
   selector: 'app-dashboard-layout-page',
@@ -24,6 +24,9 @@ import { ThemeToggleComponent } from '../../shared/components/theme-toggle/theme
   styleUrl: './dashboard-layout-page.css',
 })
 export class DashboardLayoutPage {
+  private _languageDirection = inject(LanguageDirectionService);
+  readonly dir = this._languageDirection.dir;
+
   navItems: NavItem[] = [
     { label: 'common.dashboard.title', icon: 'dashboard', route: '/dashboard' },
     { label: 'common.dashboard.products', icon: 'inventory_2', route: '/products' },

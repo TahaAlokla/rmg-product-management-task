@@ -17,7 +17,7 @@ export interface NavItem {
  selector: 'app-sidebar',
  standalone: true,
  imports: [
-  CommonModule,
+
   MatListModule,
   MatIconModule,
   MatExpansionModule,
@@ -27,7 +27,7 @@ export interface NavItem {
  ],
  templateUrl: './sidebar.component.html',
  styleUrl: './sidebar.component.css',
- changeDetection: ChangeDetectionStrategy.OnPush
+ // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SidebarComponent {
  readonly navItems = input.required<NavItem[]>();
