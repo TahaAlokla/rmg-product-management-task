@@ -1,8 +1,8 @@
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { DecimalPipe, JsonPipe, NgFor, NgIf, NgOptimizedImage } from '@angular/common';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { ProductService } from '../../services/product.service';
@@ -12,17 +12,18 @@ import { ConfirmDialogComponent } from '../../../../shared/components/confirm-di
 import { TranslocoModule } from '@jsverse/transloco';
 import { ViewChild, effect } from '@angular/core';
 
+
 @Component({
   selector: 'app-products-list',
   imports: [
     MatTableModule,
-    MatButtonModule,
     MatIconModule,
     MatDialogModule,
     MatPaginatorModule,
     NgOptimizedImage,
     DecimalPipe,
-    TranslocoModule
+    TranslocoModule,
+    MatButtonModule
   ],
   templateUrl: './products-list.html',
   styleUrl: './products-list.css',

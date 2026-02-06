@@ -1,6 +1,5 @@
 import { Component, ChangeDetectionStrategy, ViewChild, computed, signal, effect, inject } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
@@ -12,18 +11,19 @@ import type { Invoice, InvoiceStatus } from '../../models/invoice';
 import { ConfirmDialogComponent } from '../../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { Router } from '@angular/router';
 import { InvoiceService } from '../../services/invoice.service';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-invoices-list',
   imports: [
     MatTableModule,
-    MatButtonModule,
     MatIconModule,
     MatPaginatorModule,
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
-    TranslocoModule
+    TranslocoModule,
+    MatButtonModule
   ],
   templateUrl: './invoices-list.html',
   styleUrl: './invoices-list.css',

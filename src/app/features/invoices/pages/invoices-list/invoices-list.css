@@ -372,33 +372,44 @@
  text-align: right;
 }
 
-.actions-cell button {
- color: #64748b;
- transition: all 0.2s ease;
- width: 32px;
- height: 32px;
- line-height: 32px;
+.action-icons {
+ display: flex;
+ gap: 4px;
+ justify-content: flex-end;
 }
 
-:host-context(.dark) .actions-cell button {
+.action-icons mat-icon {
+ font-size: 20px;
+ width: 32px;
+ height: 32px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: #64748b;
+ cursor: pointer;
+ border-radius: 6px;
+ transition: all 0.2s ease;
+}
+
+:host-context(.dark) .action-icons mat-icon {
  color: #9ca3af;
 }
 
-.actions-cell button:hover {
+.action-icons mat-icon:hover {
  color: #3b82f6;
  background: #eff6ff;
 }
 
-:host-context(.dark) .actions-cell button:hover {
+:host-context(.dark) .action-icons mat-icon:hover {
  color: #ffffff;
  background: rgba(255, 255, 255, 0.1);
 }
 
-.actions-cell button mat-icon {
- font-size: 18px;
- width: 18px;
- height: 18px;
+.action-icons mat-icon:focus {
+ outline: 2px solid #3b82f6;
+ outline-offset: 2px;
 }
+
 
 /* Paginator */
 .invoices-paginator {
