@@ -22,8 +22,7 @@
      color="primary"
      routerLink="/products">
      <span> {{ 'common.dashboard.products' | transloco }}</span>
-     <mat-icon iconPositionEnd
-     >arrow_forward</mat-icon>
+     <mat-icon iconPositionEnd class="rtl:rotate-180">arrow_forward</mat-icon>
     </a>
    </mat-card-actions>
   </mat-card>
@@ -43,8 +42,9 @@
     <a mat-button
      color="primary"
      routerLink="/invoices">
+
+     <mat-icon iconPositionEnd class="rtl:rotate-180">arrow_forward</mat-icon>
      <span> {{ 'common.dashboard.invoices' | transloco }}</span>
-     <mat-icon iconPositionEnd>arrow_forward</mat-icon>
     </a>
    </mat-card-actions>
   </mat-card>

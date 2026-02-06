@@ -12,16 +12,14 @@
   padding: 20px;
 }
 
-:host-context(.dark) .login-container {
-  /* background: var(--mat-sys-surface-container-low, var(--color-background-dark)); */
-}
+
 
 .login-card {
   width: 100%;
   max-width: 400px;
   padding: 28px;
   border-radius: 16px;
-  background-color: var(--mat-sys-surface);
+  background-color: #fff;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 

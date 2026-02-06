@@ -30,7 +30,8 @@
   height: 100%;
 
 }
-:host-context(.dark) .dashboard-card{
+
+:host-context(.dark) .dashboard-card {
   /* background: #141a18; */
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   /* #030E09 */
@@ -49,7 +50,7 @@
   justify-content: center;
   /* #2E3C25 */
   background-color: #2E3C25;
-  color:  #fff;
+  color: #fff;
   border-radius: 50%;
 }
 
@@ -61,4 +62,8 @@
 
 mat-card-actions {
   padding: 16px;
+}
+
+:host-context([dir="rtl"]) .rtl-mirror {
+  transform: scaleX(-1);
 }
