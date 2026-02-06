@@ -7,6 +7,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ProductService } from '../../services/product.service';
 import type { Product } from '../../models/product';
 import { ProductDialog } from '../../components/product-dialog/product-dialog';
+import { ConfirmDialogComponent } from '../../../../shared/components/confirm-dialog/confirm-dialog.component';
 import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
@@ -53,6 +54,22 @@ export class ProductsList {
   }
 
   deleteProduct(id: number): void {
-    this.productService.remove(id);
+    const product = this.productService.products().find(p => p.id === id);
+    const ref = this._dialog.open(ConfirmDialogComponent, {
+      data: {
+        title: 'common.dialog.delete_title',
+        message: 'common.dialog.delete_message',
+        params: { name: product?.name || '' },
+        confirmText: 'common.dialog.delete',
+        type: 'danger'
+      },
+      backdropClass: 'backdrop-light'
+    });
+
+    ref.afterClosed().subscribe((result) => {
+      if (result) {
+        this.productService.remove(id);
+      }
+    });
   }
 }

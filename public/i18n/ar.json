@@ -7,6 +7,13 @@
       "invoices": "إنشاء الفواتير",
       "invoices_desc": "إنشاء وإدارة الفواتير"
     },
+    "dialog": {
+      "delete_title": "تأكيد الحذف",
+      "delete_message": "هل أنت متأكد أنك تريد حذف هذا المنتج: {{name}} ؟",
+      "delete": "حذف",
+      "cancel": "إلغاء",
+      "confirm": "تأكيد"
+    },
     "products": {
       "title": "إدارة المنتجات",
       "add": "إضافة منتج",

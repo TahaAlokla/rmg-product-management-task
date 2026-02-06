@@ -7,6 +7,13 @@
       "invoices": "Invoice Creation",
       "invoices_desc": "Create and manage invoices"
     },
+    "dialog": {
+      "delete_title": "Delete Confirmation !",
+      "delete_message": "Are you sure you want to delete this product: {{name}} ?",
+      "delete": "Delete",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
     "products": {
       "title": "Product Management",
       "add": "Add Product",
