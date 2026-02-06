@@ -16,6 +16,15 @@
   color: var(--mat-sys-on-primary);
 }
 
+.dashboard-toolbar button {
+  color: var(--mat-sys-on-primary);
+}
+
+.dashboard-toolbar mat-icon {
+  color: inherit;
+}
+
+
 .dashboard-sidenav-container {
   flex: 1;
 }
