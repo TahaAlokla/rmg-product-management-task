@@ -1,8 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "https://rmg-product-management-task.vercel.app/$1"
+      "source": "/api/products",
+      "destination": "/api/products.js"
+    },
+    {
+      "source": "/api/users",
+      "destination": "/api/users.js"
     },
     {
       "source": "/(.*)",
