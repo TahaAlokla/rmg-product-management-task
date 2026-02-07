@@ -15,7 +15,28 @@
   </div>
 
   <div class="table-card">
-
+    @if (productService.isLoading()) {
+    <div class="skeleton-wrapper">
+      <div class="skeleton-header">
+        <div style="width: 36px;">{{ 'common.products.image' | transloco }}</div>
+        <div style="flex: 1; max-width: 200px;">{{ 'common.products.name' | transloco }}</div>
+        <div style="flex: 2;">{{ 'common.products.description' | transloco }}</div>
+        <div style="width: 80px;">{{ 'common.products.price' | transloco }}</div>
+        <div style="width: 80px; text-align: right;">{{ 'common.products.actions' | transloco }}</div>
+      </div>
+      @for (i of [1,2,3,4,5]; track i) {
+      <div class="skeleton-row">
+        <div class="skeleton skeleton-image"></div>
+        <div class="skeleton skeleton-text"
+          style="width: 20%"></div>
+        <div class="skeleton skeleton-text"
+          style="width: 40%"></div>
+        <div class="skeleton skeleton-pill"></div>
+        <div class="skeleton skeleton-actions"></div>
+      </div>
+      }
+    </div>
+    } @else {
     <table mat-table
       [dataSource]="dataSource"
       class="products-table "
@@ -90,5 +111,6 @@
       aria-label="Select page of products"
       class="products-paginator">
     </mat-paginator>
+    }
   </div>
 </div>

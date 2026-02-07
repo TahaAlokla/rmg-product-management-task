@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
-import { DecimalPipe, JsonPipe, NgFor, NgIf, NgOptimizedImage } from '@angular/common';
+import { DecimalPipe, NgOptimizedImage } from '@angular/common';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -33,22 +34,22 @@ export class ProductsList {
   protected readonly productService = inject(ProductService);
   private _dialog = inject(MatDialog);
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatPaginator) set paginator(paginator: MatPaginator) {
+    if (paginator) {
+      this.dataSource.paginator = paginator;
+    }
+  }
 
   dataSource = new MatTableDataSource<Product>([]);
 
   constructor() {
-    this.productService.getProducts();
+    this.productService.getProducts()
+      .pipe(takeUntilDestroyed())
+      .subscribe();
+
     effect(() => {
       this.dataSource.data = this.productService.products();
-      if (this.paginator) {
-        this.dataSource.paginator = this.paginator;
-      }
     });
-  }
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
   }
 
   openAdd(): void {
