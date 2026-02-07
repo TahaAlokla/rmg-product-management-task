@@ -229,15 +229,26 @@
 .table-card {
  background: #fff;
  border-radius: 16px;
- overflow: hidden;
  border: 1px solid #e2e8f0;
- box-shadow: 0 1px 3px rgba(0, 0, 0, .05)
+ box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+ overflow: hidden
 }
 
 :host-context(.dark) .table-card {
  background: rgba(255, 255, 255, .03);
  border: 1px solid rgba(255, 255, 255, .1);
  box-shadow: 0 4px 12px rgba(0, 0, 0, .3)
+}
+
+.table-wrapper {
+ overflow-x: auto;
+ -webkit-overflow-scrolling: touch;
+ background: #fff;
+ max-width: 100%
+}
+
+:host-context(.dark) .table-wrapper {
+ background: rgba(255, 255, 255, .03)
 }
 
 .invoices-table {
@@ -290,6 +301,10 @@
  background: rgba(255, 255, 255, .03)
 }
 
+.total-cost {
+ white-space: nowrap
+}
+
 .status-badge {
  display: inline-flex;
  align-items: center;
@@ -298,7 +313,8 @@
  font-size: 12px;
  font-weight: 600;
  text-transform: capitalize;
- letter-spacing: .02em
+ letter-spacing: .02em;
+ white-space: nowrap
 }
 
 .status-badge.status-shipped {
@@ -450,7 +466,7 @@
   max-width: 100%
  }
 
- .table-card {
+ .table-wrapper {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch
  }
