@@ -17,10 +17,6 @@
  font-weight: 600;
 }
 
-mat-expansion-panel-header {
- /* padding: 0 16px; */
-}
-
 mat-panel-title {
  display: flex;
  align-items: center;
@@ -39,6 +35,27 @@ mat-icon {
  font-weight: 700;
 }
 
+/* Remove padding from expansion panel body */
+::ng-deep .mat-expansion-panel-body {
+ padding: 0 !important;
+}
+
+/* Style active child link to match parent */
+.child-nav-item.active-link {
+ background-color: rgba(22, 90, 80, 0.5);
+ margin-top: 4px;
+ margin-bottom: 4px;
+}
+
+/* Active child link text/icon color - using default */
+.child-nav-item.active-link .mat-icon,
+.child-nav-item.active-link span {
+ /* color: var(--mat-sys-primary, #165a50); */
+ color: inherit;
+ font-weight: 600;
+}
+
+/* Add spacing between child items */
 .child-nav-item {
  margin-top: 4px;
  margin-bottom: 4px;
@@ -50,7 +67,35 @@ mat-icon {
  margin-bottom: 0;
 }
 
+/* Remove default padding from dense list */
+/* Ensure consistent spacing */
 mat-nav-list[dense] {
  padding-top: 8px;
  padding-bottom: 8px;
+ display: flex;
+ flex-direction: column;
+ gap: 4px;
+}
+
+/* Override MDC list item padding to match parent */
+mat-nav-list[dense] ::ng-deep .mat-mdc-list-item-icon {
+ margin-inline-end: 12px;
+}
+
+mat-nav-list[dense] ::ng-deep .mat-mdc-list-item {
+ padding-left: 24px !important;
+ padding-right: 24px !important;
+}
+
+/* Ensure parent header has same padding */
+/* Ensure parent header has same padding */
+mat-expansion-panel-header {
+ padding-left: 24px !important;
+ padding-right: 24px !important;
+}
+
+/* Ensure regular list items have same padding */
+mat-nav-list:not([dense]) .mat-mdc-list-item {
+ padding-left: 24px !important;
+ padding-right: 24px !important;
 }
