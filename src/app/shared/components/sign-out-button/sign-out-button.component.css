@@ -1,0 +1,52 @@
+@keyframes floatBtnIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+:host {
+  position: fixed;
+  bottom: 128px;
+  inset-inline-end: 24px;
+  z-index: 1000;
+  display: block;
+  width: 40px;
+  height: 40px;
+  animation: floatBtnIn 0.3s ease-out 120ms forwards;
+  opacity: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+
+.sign-out-btn {
+  width: 100%;
+  height: 100%;
+  min-width: 40px;
+  min-height: 40px;
+  background-color: var(--color-primary, #165a50);
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sign-out-btn mat-icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.sign-out-btn:focus-visible {
+  outline: 2px solid var(--mat-sys-primary);
+  outline-offset: 2px;
+}
+
+:host-context(.dark) .sign-out-btn {
+  background-color: #e0e0e0;
+  color: black;
+}

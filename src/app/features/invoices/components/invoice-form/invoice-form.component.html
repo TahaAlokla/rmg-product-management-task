@@ -1,0 +1,169 @@
+<div class="invoice-form-container">
+ <form [formGroup]="invoiceForm"
+  (ngSubmit)="onSubmit()">
+  <!-- Header -->
+  <div class="form-header">
+   <div class="header-left">
+    <h1 class="form-title">
+     {{ mode() === 'add' ? ('common.invoices.form.add_invoice' | transloco) : ('common.invoices.form.edit_invoice' |
+     transloco) }}
+    </h1>
+    <div class="invoice-number"># {{ invoiceNumber() }}</div>
+   </div>
+   <div class="header-actions">
+    <button type="button"
+     mat-stroked-button
+     (click)="onCancel()"
+     class="cancel-button">
+     {{ 'common.invoices.form.cancel' | transloco }}
+    </button>
+    <button type="submit"
+     mat-flat-button
+     color="primary"
+     [disabled]="!invoiceForm.valid"
+     class="save-button">
+     {{ 'common.invoices.form.save_invoice' | transloco }}
+    </button>
+   </div>
+  </div>
+
+  <!-- Order Info -->
+  <div class="form-section">
+   <div class="section-row">
+    <mat-form-field appearance="outline"
+     class="form-field">
+     <mat-label>{{ 'common.invoices.form.order_status' | transloco }}</mat-label>
+     <mat-select formControlName="status">
+      @for (status of statusOptions; track status) {
+      <mat-option [value]="status">
+       {{ 'common.invoices.status.' + status | transloco }}
+      </mat-option>
+      }
+     </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline"
+     class="form-field">
+     <mat-label>{{ 'common.invoices.form.order_date' | transloco }}</mat-label>
+     <input matInput
+      [matDatepicker]="picker"
+      formControlName="orderDate">
+     <mat-datepicker-toggle matIconSuffix
+      [for]="picker"></mat-datepicker-toggle>
+     <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+   </div>
+  </div>
+
+  <!-- Billing Info -->
+  <div class="form-section">
+   <div class="section-row">
+    <mat-form-field appearance="outline"
+     class="form-field">
+     <mat-label>{{ 'common.invoices.form.bill_from' | transloco }}</mat-label>
+     <input matInput
+      formControlName="billFrom"
+      [placeholder]="'common.invoices.form.bill_from_placeholder' | transloco">
+     @if (invoiceForm.get('billFrom')?.hasError('required') && invoiceForm.get('billFrom')?.touched) {
+     <mat-error>{{ 'common.invoices.form.bill_from_required' | transloco }}</mat-error>
+     }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline"
+     class="form-field">
+     <mat-label>{{ 'common.invoices.form.bill_to' | transloco }}</mat-label>
+     <input matInput
+      formControlName="billTo"
+      [placeholder]="'common.invoices.form.bill_to_placeholder' | transloco">
+     @if (invoiceForm.get('billTo')?.hasError('required') && invoiceForm.get('billTo')?.touched) {
+     <mat-error>{{ 'common.invoices.form.bill_to_required' | transloco }}</mat-error>
+     }
+    </mat-form-field>
+   </div>
+  </div>
+
+  <!-- Items Table -->
+  <div class="form-section items-section">
+   <div class="items-table">
+    <div class="table-header">
+     <div class="col-number">#</div>
+     <div class="col-name">{{ 'common.invoices.form.item_name' | transloco }}</div>
+     <div class="col-price">{{ 'common.invoices.form.unit_price' | transloco }}</div>
+     <div class="col-units">{{ 'common.invoices.form.units' | transloco }}</div>
+     <div class="col-total">{{ 'common.invoices.form.total_price' | transloco }}</div>
+     <div class="col-actions"></div>
+    </div>
+
+    <div formArrayName="items">
+     @for (item of items.controls; track $index) {
+     <div class="table-row"
+      [formGroupName]="$index">
+      <div class="col-number">{{ $index + 1 }}</div>
+      <div class="col-name">
+       <mat-form-field appearance="outline"
+        class="item-field">
+        <input matInput
+         formControlName="name">
+       </mat-form-field>
+      </div>
+      <div class="col-price">
+       <mat-form-field appearance="outline"
+        class="item-field">
+        <input matInput
+         type="number"
+         formControlName="unitPrice"
+         min="0">
+       </mat-form-field>
+      </div>
+      <div class="col-units">
+       <mat-form-field appearance="outline"
+        class="item-field">
+        <input matInput
+         type="number"
+         formControlName="units"
+         min="1">
+       </mat-form-field>
+      </div>
+      <div class="col-total">
+       <span class="total-value">{{ item.get('totalPrice')?.value | number:'1.2-2' }}</span>
+      </div>
+      <div class="col-actions">
+       <button type="button"
+        mat-icon-button
+        (click)="removeItem($index)"
+        [disabled]="items.length === 1"
+        class="remove-button">
+        <mat-icon>delete</mat-icon>
+       </button>
+      </div>
+     </div>
+     }
+    </div>
+   </div>
+
+   <button type="button"
+    mat-stroked-button
+    (click)="addItem()"
+    class="add-item-button">
+    <mat-icon>add</mat-icon>
+    {{ 'common.invoices.form.add_item' | transloco }}
+   </button>
+  </div>
+
+  <!-- Totals -->
+  <div class="form-section totals-section">
+   <div class="totals-row">
+    <span class="totals-label">{{ 'common.invoices.form.subtotal' | transloco }}:</span>
+    <span class="totals-value">{{ getSubtotal() | number:'1.2-2' }}</span>
+   </div>
+   <div class="totals-row">
+    <span class="totals-label">{{ 'common.invoices.form.vat' | transloco }}:</span>
+    <span class="totals-value">{{ getVAT() | number:'1.2-2' }}</span>
+   </div>
+   <div class="totals-row grand-total">
+    <span class="totals-label">{{ 'common.invoices.form.grand_total' | transloco }}:</span>
+    <span class="totals-value">{{ getGrandTotal() | number:'1.2-2' }}</span>
+   </div>
+  </div>
+ </form>
+</div>

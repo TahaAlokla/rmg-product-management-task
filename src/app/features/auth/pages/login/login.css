@@ -1,0 +1,87 @@
+:host {
+  display: block;
+  height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* background: linear-gradient(145deg, #e8eaf6 0%, #c5cae9 50%, #9fa8da 100%); */
+  padding: 20px;
+}
+
+
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 28px;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+:host-context(.dark) .login-card {
+  /* background: #141a18; */
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  /* #030E09 */
+  background: #030E09;
+  border: 1px solid #212121;
+}
+
+mat-card-header {
+  justify-content: center;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+mat-card-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--mat-sys-on-surface);
+}
+
+mat-card-subtitle {
+  font-size: 14px;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* Primary button: label uses on-primary (e.g. white in dark) so it's not blue */
+.submit-button,
+.submit-button span,
+.submit-button .mat-mdc-button-label {
+  color: var(--mat-sys-on-primary);
+}
+
+.submit-button {
+  height: 48px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+.error-message {
+  color: var(--mat-sys-error);
+  font-size: 14px;
+  text-align: center;
+  background-color: var(--mat-sys-error-container);
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+:host-context(.dark) .error-message {
+  color: var(--mat-sys-on-error-container);
+}

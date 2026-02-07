@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>{{ data.title | transloco: data.params }}</h2>
+<mat-dialog-content class="dialog-content">
+ <p>{{ data.message | transloco: data.params }}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+ <button mat-button
+  mat-dialog-close>
+  {{ data.cancelText ? (data.cancelText | transloco: data.params) : ('common.dialog.cancel' | transloco) }}
+ </button>
+ <button mat-flat-button
+  [color]="confirmColor"
+  [mat-dialog-close]="true">
+  {{ data.confirmText ? (data.confirmText | transloco: data.params) : ('common.dialog.confirm' | transloco) }}
+ </button>
+</mat-dialog-actions>

@@ -1,0 +1,76 @@
+@if (invoice(); as inv) {
+<div class="view-invoice-container">
+ <!-- Header -->
+ <div class="invoice-header">
+  <div class="header-left">
+   <h1 class="invoice-title">{{ 'common.invoices.view.title' | transloco }}</h1>
+   <div class="invoice-number"># {{ inv.id }}</div>
+  </div>
+  <div class="header-actions">
+   <button mat-stroked-button
+    (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon>
+    {{ 'common.invoices.view.back' | transloco }}
+   </button>
+   <button mat-flat-button
+    color="primary"
+    (click)="editInvoice()">
+    <mat-icon>edit</mat-icon>
+    {{ 'common.invoices.view.edit' | transloco }}
+   </button>
+  </div>
+ </div>
+
+ <!-- Invoice Details -->
+ <div class="invoice-details">
+  <div class="detail-section">
+   <div class="detail-row">
+    <span class="detail-label">{{ 'common.invoices.view.status' | transloco }}:</span>
+    <span class="status-badge status-{{ inv.status }}">
+     {{ 'common.invoices.status.' + inv.status | transloco }}
+    </span>
+   </div>
+
+   <div class="detail-row">
+    <span class="detail-label">{{ 'common.invoices.view.bill_from' | transloco }}:</span>
+    <span class="detail-value">{{ inv.billFrom }}</span>
+   </div>
+
+   <div class="detail-row">
+    <span class="detail-label">{{ 'common.invoices.view.bill_to' | transloco }}:</span>
+    <span class="detail-value">{{ inv.billTo }}</span>
+   </div>
+
+   <!-- Items Table -->
+   @if (inv.items && inv.items.length > 0) {
+   <div class="items-section">
+    <h3 class="section-title">{{ 'common.invoices.form.items' | transloco }}</h3>
+    <div class="items-table">
+     <div class="items-header">
+      <div class="col-number">#</div>
+      <div class="col-name">{{ 'common.invoices.form.item_name' | transloco }}</div>
+      <div class="col-price">{{ 'common.invoices.form.unit_price' | transloco }}</div>
+      <div class="col-units">{{ 'common.invoices.form.units' | transloco }}</div>
+      <div class="col-total">{{ 'common.invoices.form.total_price' | transloco }}</div>
+     </div>
+     @for (item of inv.items; track $index) {
+     <div class="items-row">
+      <div class="col-number">{{ $index + 1 }}</div>
+      <div class="col-name">{{ item.name }}</div>
+      <div class="col-price">{{ item.unitPrice | number:'1.2-2' }}</div>
+      <div class="col-units">{{ item.units }}</div>
+      <div class="col-total">{{ item.totalPrice | number:'1.2-2' }}</div>
+     </div>
+     }
+    </div>
+   </div>
+   }
+
+   <div class="detail-row total-row">
+    <span class="detail-label">{{ 'common.invoices.view.total_cost' | transloco }}:</span>
+    <span class="detail-value total-value">{{ inv.totalCost | number:'1.2-2' }}</span>
+   </div>
+  </div>
+ </div>
+</div>
+}

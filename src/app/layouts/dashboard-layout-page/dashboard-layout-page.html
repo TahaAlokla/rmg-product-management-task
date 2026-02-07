@@ -1,0 +1,27 @@
+<div class="dashboard-layout-container">
+  <mat-toolbar color="primary"
+    class="dashboard-toolbar shadow-lg">
+    <button mat-icon-button
+      (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>RMG Task</span>
+    <span class="spacer"></span>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="dashboard-sidenav-container "
+    [dir]="dir()">
+    <mat-sidenav #sidenav
+      mode="side"
+      opened
+      class="dashboard-sidenav px-2">
+      <app-sidebar [navItems]="navItems"></app-sidebar>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="dashboard-content">
+      <main class="content-wrapper ">
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -1,0 +1,138 @@
+{
+  "common":{
+    "dashboard": {
+      "title": "Dashboard",
+      "products": "Product Management",
+      "products_desc": "Manage your product inventory",
+      "invoices": "Invoice Creation",
+      "invoices_desc": "Create and manage invoices",
+      "invoices-list": "Invoices List",
+      "add-invoice": "Add Invoice"
+    },
+    "dialog": {
+      "delete_title": "Delete Confirmation !",
+      "delete_message": "Are you sure you want to delete this product: {{name}} ?",
+      "delete": "Delete",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
+    "products": {
+      "title": "Product Management",
+      "add": "Add Product",
+      "image": "Image",
+      "name": "Name",
+      "description": "Description",
+      "price": "Price",
+      "actions": "Actions",
+      "edit": "Edit",
+      "delete": "Delete",
+      "edit_aria": "Edit product",
+      "delete_aria": "Delete product",
+      "dialog": {
+        "title_add": "Add Product",
+        "title_edit": "Edit Product",
+        "field_imageUrl": "Image URL",
+        "field_name": "Name",
+        "field_description": "Description",
+        "field_price": "Price",
+        "save": "Save",
+        "cancel": "Cancel",
+        "actions":"Actions"
+      }
+    },
+    "invoices": {
+      "title": "Invoice",
+      "home": "Home",
+      "breadcrumb_invoice": "Invoice",
+      "stats": {
+        "total": "Total",
+        "shipped": "Shipped",
+        "delivered": "Delivered",
+        "pending": "Pending",
+        "invoices": "Invoices"
+      },
+      "search_placeholder": "Search invoice",
+      "add_invoice": "Add Invoice",
+      "delete_message": "Are you sure you want to delete invoice #{{id}} from {{billFrom}}?",
+      "table": {
+        "id": "Id",
+        "bill_from": "Bill From",
+        "bill_to": "Bill To",
+        "total_cost": "Total Cost",
+        "status": "Status",
+        "action": "Action"
+      },
+      "status": {
+        "shipped": "shipped",
+        "delivered": "delivered",
+        "pending": "pending"
+      },
+      "actions": {
+        "edit": "Edit invoice",
+        "view": "View invoice",
+        "delete": "Delete invoice"
+      },
+      "form": {
+        "add_invoice": "Add Invoice",
+        "edit_invoice": "Edit Invoice",
+        "save_invoice": "Save Invoice",
+        "cancel": "Cancel",
+        "order_status": "Order Status",
+        "order_date": "Order Date",
+        "bill_from": "Bill From",
+        "bill_from_placeholder": "Enter From Address",
+        "bill_from_required": "Bill From is required",
+        "bill_to": "Bill To",
+        "bill_to_placeholder": "Enter To Address",
+        "bill_to_required": "Bill To is required",
+        "items": "Items",
+        "item_name": "Item Name",
+        "unit_price": "Unit Price",
+        "units": "Units",
+        "total_price": "Total Price",
+        "add_item": "Add Item",
+        "subtotal": "Sub total",
+        "vat": "Total Vat",
+        "grand_total": "Grand Total"
+      },
+      "view": {
+        "title": "Invoice Details",
+        "back": "Back to List",
+        "edit": "Edit Invoice",
+        "status": "Status",
+        "bill_from": "Bill From",
+        "bill_to": "Bill To",
+        "total_cost": "Total Cost",
+        "items": "Items"
+      }
+    },
+    "paginator": {
+      "itemsPerPageLabel": "Items per page:",
+      "nextPageLabel": "Next page",
+      "previousPageLabel": "Previous page",
+      "firstPageLabel": "First page",
+      "lastPageLabel": "Last page",
+      "ofLabel": "of"
+    },
+    "logout": "Logout",
+    "login":{
+      "title": "Login",
+      "email": "Email",
+      "username": "Username",
+      "password": "Password",
+      "login": "Login",
+      "signup": "Signup",
+      "signup_title": "Signup",
+      "signup_description": "Signup",
+      "signup_button": "Signup",
+      "signup_button_description": "Signup",
+      "description": "Login to continue",
+      "email_error": "Please enter a valid email",
+      "password_error": "Password is required",
+      "signing_in": "Signing in...",
+      "signing_in_description": "Signing in...",
+      "signing_in_button": "Sign In",
+      "signing_in_button_description": "Sign In"
+    }
+  }
+}
