@@ -12,8 +12,8 @@
   <mat-sidenav-container class="dashboard-sidenav-container "
     [dir]="dir()">
     <mat-sidenav #sidenav
-      mode="side"
-      opened
+      [mode]="isMobile() ? 'over' : 'side'"
+      [opened]="!isMobile()"
       class="dashboard-sidenav px-2">
       <app-sidebar [navItems]="navItems"></app-sidebar>
     </mat-sidenav>
