@@ -1,6 +1,6 @@
 /* Global styles: Tailwind + Angular Material theme (light/dark from material-theme.scss) */
 
-@import "tailwindcss";
+
 
 @theme {
   --color-primary: #165A50;
