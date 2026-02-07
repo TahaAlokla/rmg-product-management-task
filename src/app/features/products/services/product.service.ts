@@ -1,42 +1,52 @@
-import { Injectable, WritableSignal, signal } from '@angular/core';
+import { Injectable, WritableSignal, signal, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { tap } from 'rxjs/operators';
 import type { Product } from '../models/product';
-import * as mockData from '../../../../../mock-data.json';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class ProductService {
+  private http = inject(HttpClient);
+  private apiUrl = `${environment.apiUrl}/products`;
+
   private _products: WritableSignal<Product[]> = signal<Product[]>([]);
   readonly products = this._products.asReadonly();
 
-  constructor() {
-    this._products.set((mockData as unknown as { products: Product[] }).products ?? []);
+  getProducts(): void {
+    this.http.get<Product[]>(this.apiUrl).pipe(
+      tap(products => this._products.set(products))
+    ).subscribe();
   }
 
-  add(product: Omit<Product, 'id'>): Product {
+  add(product: Omit<Product, 'id'>): void {
     const nextId = (this._products().reduce((max, p) => Math.max(max, p.id), 0) || 0) + 1;
     const created: Product = { id: nextId, ...product };
-    this._products.update((list) => {
-      return [...list, created];
-    });
-    return created;
+    this._products.update((list) => [...list, created]);
+
+    // Future: POST to API
+    // this.http.post<Product>(this.apiUrl, product).subscribe(created => {
+    //   this._products.update(list => [...list, created]);
+    // });
   }
 
-  update(id: number, changes: Partial<Omit<Product, 'id'>>): Product | null {
-    let updated: Product | null = null;
+  update(id: number, changes: Partial<Omit<Product, 'id'>>): void {
     this._products.update((list) => {
       return list.map((p) => {
         if (p.id === id) {
-          updated = { ...p, ...changes };
-          return updated!;
+          return { ...p, ...changes };
         }
         return p;
       });
     });
-    return updated;
+
+    // Future: PUT/PATCH to API
   }
 
   remove(id: number): void {
     this._products.update((list) => {
       return list.filter((p) => p.id !== id);
     });
+
+    // Future: DELETE from API
   }
 }
