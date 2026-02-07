@@ -6,7 +6,7 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class ThemeService {
   private _platformId = inject(PLATFORM_ID);
-  isDarkMode = signal<boolean>(false);
+  isDarkMode = signal<boolean>(true);
 
   constructor() {
     if (isPlatformBrowser(this._platformId)) {
@@ -16,7 +16,8 @@ export class ThemeService {
         isDark = savedTheme === 'dark';
         this.isDarkMode.set(isDark);
       } else {
-        isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        // Default to dark mode on first load
+        isDark = true;
         this.isDarkMode.set(isDark);
       }
       const html = document.documentElement;
