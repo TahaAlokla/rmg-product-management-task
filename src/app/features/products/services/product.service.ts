@@ -1,6 +1,7 @@
 import { Injectable, WritableSignal, signal, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { tap } from 'rxjs/operators';
+import { Observable, catchError, throwError } from 'rxjs';
+import { delay, tap } from 'rxjs/operators';
 import type { Product } from '../models/product';
 import { environment } from '../../../../environments/environment';
 
@@ -12,10 +13,22 @@ export class ProductService {
   private _products: WritableSignal<Product[]> = signal<Product[]>([]);
   readonly products = this._products.asReadonly();
 
-  getProducts(): void {
-    this.http.get<Product[]>(this.apiUrl).pipe(
-      tap(products => this._products.set(products))
-    ).subscribe();
+  private _loading = signal<boolean>(false);
+  readonly isLoading = this._loading.asReadonly();
+
+  getProducts(): Observable<Product[]> {
+    this._loading.set(true);
+    return this.http.get<Product[]>(this.apiUrl).pipe(
+      delay(1000),
+      tap((products) => {
+        this._products.set(products);
+        this._loading.set(false);
+      }),
+      catchError((err) => {
+        this._loading.set(false);
+        return throwError(() => err);
+      })
+    );
   }
 
   add(product: Omit<Product, 'id'>): void {
