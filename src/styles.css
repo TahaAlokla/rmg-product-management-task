@@ -2,14 +2,9 @@
 
 
 
-@theme {
+:root {
   --color-primary: #165A50;
   --color-background-dark: #141A18;
-}
-
-@custom-variant dark (&:where(.dark, .dark *));
-
-:root {
   --mat-sys-primary: var(--color-primary);
   font-family: 'Exo 2', sans-serif;
 }
