@@ -20,6 +20,7 @@ Hello, this is a test project for a Frontend function. I used the latest version
 - 📱 **Responsive Design** - Works seamlessly on all device sizes
 - ♿ **Accessibility** - WCAG AA compliant with proper ARIA attributes
 - 🎨 **Modern UI** - Clean, professional interface with smooth animations
+- ⏳ **Splash Screen** - Premium, elegant splash screen for a better first impression
 
 ## 📋 Project Structure
 
@@ -35,16 +36,35 @@ src/
 └── styles.css            # Global styles
 ```
 
-## 🛠️ Development server
+## 🛠️ Local Development
 
-To start a local development server, run:
+To run the project locally, you need to start both the mock server and the Angular application.
+
+### 1. Start the Mock Server
+
+The project uses `json-server` to mock the backend. By default, it runs on port `3000`.
+
+```bash
+# Run server on default port 3000
+npm run server
+
+# Or run on a custom port
+npx json-server --watch mock-data.json --port 4000
+```
+
+> [!NOTE]
+> If you change the server port, remember to update the `target` in `proxy.conf.json`.
+
+### 2. Start the Angular Application
+
+To start the local development server on port `4200`:
 
 ```bash
 npm install
-ng serve
+npm start -- --port 4200
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Once the servers are running, navigate to `http://localhost:4200/`.
 
 ## 🏗️ Building
 
