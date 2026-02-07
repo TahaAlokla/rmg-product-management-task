@@ -8,7 +8,7 @@ body splash-screen {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+    background: radial-gradient(circle at center, #0a3d35 0%, #051f1b 100%);
     color: #ffffff;
     z-index: 999999;
     pointer-events: none;
@@ -23,17 +23,18 @@ body splash-screen .brand-container {
     align-items: center;
     gap: 24px;
     animation: fadeInScale 0.8s ease-out forwards;
+    padding: 20px;
 }
 
 body splash-screen .logo-placeholder {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    background: linear-gradient(135deg, #165a50 0%, #0f4139 100%);
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 10px 25px -5px rgba(22, 90, 80, 0.5);
 }
 
 body splash-screen .logo-placeholder .icon {
@@ -48,10 +49,11 @@ body splash-screen h1 {
     font-weight: 700;
     letter-spacing: 2px;
     margin: 0;
-    background: linear-gradient(to right, #ffffff, #94a3b8);
+    background: linear-gradient(to right, #ffffff, #7dd3c0);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-align: center;
 }
 
 body splash-screen .loader {
@@ -59,7 +61,7 @@ body splash-screen .loader {
     height: 48px;
     border: 3px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    border-top-color: #3b82f6;
+    border-top-color: #165a50;
     margin-top: 48px;
     animation: spin 1s linear infinite;
 }
@@ -89,4 +91,59 @@ body:not(.splash-screen-hidden) {
 body.splash-screen-hidden splash-screen {
     visibility: hidden;
     opacity: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body splash-screen .logo-placeholder {
+        width: 64px;
+        height: 64px;
+        border-radius: 16px;
+    }
+
+    body splash-screen .logo-placeholder .icon {
+        font-size: 32px;
+    }
+
+    body splash-screen h1 {
+        font-size: 24px;
+        letter-spacing: 1.5px;
+    }
+
+    body splash-screen .loader {
+        width: 40px;
+        height: 40px;
+        margin-top: 36px;
+    }
+
+    body splash-screen .brand-container {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body splash-screen .logo-placeholder {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+    }
+
+    body splash-screen .logo-placeholder .icon {
+        font-size: 28px;
+    }
+
+    body splash-screen h1 {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    body splash-screen .loader {
+        width: 36px;
+        height: 36px;
+        margin-top: 28px;
+    }
+
+    body splash-screen .brand-container {
+        gap: 16px;
+    }
 }

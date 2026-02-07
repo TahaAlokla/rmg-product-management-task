@@ -355,29 +355,66 @@
  display: flex;
  align-items: center;
  justify-content: center;
- color: #64748b;
  cursor: pointer;
  border-radius: 6px;
  transition: all .2s ease
 }
 
-:host-context(.dark) .action-icons mat-icon {
- color: #9ca3af
-}
-
-.action-icons mat-icon:hover {
+/* Edit icon - Blue */
+.action-icons mat-icon:nth-child(1) {
  color: #3b82f6;
- background: #eff6ff
 }
 
-:host-context(.dark) .action-icons mat-icon:hover {
- color: #fff;
- background: rgba(255, 255, 255, .1)
+:host-context(.dark) .action-icons mat-icon:nth-child(1) {
+ color: #60a5fa;
 }
 
-.action-icons mat-icon:focus {
- outline: 2px solid #3b82f6;
- outline-offset: 2px
+.action-icons mat-icon:nth-child(1):hover {
+ color: #2563eb;
+ background: #eff6ff;
+}
+
+:host-context(.dark) .action-icons mat-icon:nth-child(1):hover {
+ color: #93c5fd;
+ background: rgba(59, 130, 246, 0.2);
+}
+
+/* View icon - Green */
+.action-icons mat-icon:nth-child(2) {
+ color: #10b981;
+}
+
+:host-context(.dark) .action-icons mat-icon:nth-child(2) {
+ color: #34d399;
+}
+
+.action-icons mat-icon:nth-child(2):hover {
+ color: #059669;
+ background: #d1fae5;
+}
+
+:host-context(.dark) .action-icons mat-icon:nth-child(2):hover {
+ color: #6ee7b7;
+ background: rgba(16, 185, 129, 0.2);
+}
+
+/* Delete icon - Red */
+.action-icons mat-icon:nth-child(3) {
+ color: #ef4444;
+}
+
+:host-context(.dark) .action-icons mat-icon:nth-child(3) {
+ color: #f87171;
+}
+
+.action-icons mat-icon:nth-child(3):hover {
+ color: #dc2626;
+ background: #fef2f2;
+}
+
+:host-context(.dark) .action-icons mat-icon:nth-child(3):hover {
+ color: #fca5a5;
+ background: rgba(239, 68, 68, 0.2);
 }
 
 .invoices-paginator {
@@ -468,13 +505,60 @@
   max-width: 100%
  }
 
+ /* Enable horizontal scrolling for table */
+ .table-card {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+ }
+
  .invoices-table {
+  min-width: 700px;
+  /* Fixed minimum width to enable scrolling */
   font-size: .875rem
  }
 
  .invoices-table th,
  .invoices-table td {
   padding: 1rem .75rem
+ }
+
+ /* Make action icons larger for better touch targets */
+ .action-icons mat-icon {
+  width: 36px;
+  height: 36px;
+  font-size: 22px;
+ }
+}
+
+@media (max-width: 480px) {
+ .invoices-container {
+  padding: 0.75rem;
+ }
+
+ .stat-card {
+  padding: 1rem;
+ }
+
+ .stat-icon {
+  width: 48px;
+  height: 48px;
+ }
+
+ .stat-icon mat-icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+ }
+
+ .stat-value {
+  font-size: 1.125rem;
+ }
+
+ /* Further reduce padding on very small screens */
+ .invoices-table th,
+ .invoices-table td {
+  padding: 0.875rem 0.5rem;
+  font-size: 0.813rem;
  }
 }
 

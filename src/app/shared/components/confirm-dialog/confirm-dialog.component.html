@@ -8,7 +8,8 @@
   {{ data.cancelText ? (data.cancelText | transloco: data.params) : ('common.dialog.cancel' | transloco) }}
  </button>
  <button mat-flat-button
-  [color]="confirmColor"
+  [class.danger-button]="data.type === 'danger'"
+  [color]="data.type === 'danger' ? undefined : 'primary'"
   [mat-dialog-close]="true">
   {{ data.confirmText ? (data.confirmText | transloco: data.params) : ('common.dialog.confirm' | transloco) }}
  </button>

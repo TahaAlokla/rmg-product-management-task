@@ -263,15 +263,148 @@
   grid-template-columns: 1fr;
  }
 
- .table-header,
- .table-row {
-  grid-template-columns: 40px 1.5fr 0.8fr 0.8fr 1fr 50px;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  font-size: 0.875rem;
+ /* Stack items table fields vertically on mobile */
+ .table-header {
+  display: none;
+  /* Hide header on mobile */
  }
 
- .table-header {
+ .table-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: #f8fafc;
+ }
+
+ :host-context(.dark) .table-row {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.1);
+ }
+
+ .col-number {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+ }
+
+ :host-context(.dark) .col-number {
+  color: #60a5fa;
+ }
+
+ .col-number::before {
+  content: 'Item #';
+  margin-right: 0.25rem;
+ }
+
+ .col-name,
+ .col-price,
+ .col-units,
+ .col-total {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+ }
+
+ .col-name::before {
+  content: 'Item Name';
   font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+ }
+
+ .col-price::before {
+  content: 'Unit Price';
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+ }
+
+ .col-units::before {
+  content: 'Units';
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+ }
+
+ .col-total::before {
+  content: 'Total Price';
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+ }
+
+ :host-context(.dark) .col-name::before,
+ :host-context(.dark) .col-price::before,
+ :host-context(.dark) .col-units::before,
+ :host-context(.dark) .col-total::before {
+  color: #9ca3af;
+ }
+
+ .col-total {
+  padding-top: 0.5rem;
+  border-top: 1px solid #e2e8f0;
+ }
+
+ :host-context(.dark) .col-total {
+  border-top-color: rgba(255, 255, 255, 0.1);
+ }
+
+ .total-value {
+  font-size: 1.125rem;
+ }
+
+ .col-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.5rem;
+ }
+
+ .remove-button {
+  width: 40px;
+  height: 40px;
+ }
+
+ .totals-section {
+  max-width: 100%;
+  margin: 0 1rem;
+ }
+}
+
+@media (max-width: 480px) {
+ .invoice-form-container {
+  padding: 0.75rem;
+ }
+
+ .form-section {
+  padding: 1rem;
+ }
+
+ .form-title {
+  font-size: 1.5rem;
+ }
+
+ .invoice-number {
+  font-size: 1rem;
+ }
+
+ .table-row {
+  padding: 0.875rem;
+ }
+
+ .add-item-button {
+  margin: 1rem;
  }
 }

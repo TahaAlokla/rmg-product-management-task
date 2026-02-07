@@ -132,29 +132,47 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #64748b;
   cursor: pointer;
   border-radius: 6px;
   transition: all 0.2s ease;
 }
 
-:host-context(.dark) .action-icons mat-icon {
-  color: #9ca3af;
+/* Edit icon - Blue */
+.action-icons mat-icon:first-child {
+  color: #3b82f6;
 }
 
-.action-icons mat-icon:hover {
-  color: #3b82f6;
+:host-context(.dark) .action-icons mat-icon:first-child {
+  color: #60a5fa;
+}
+
+.action-icons mat-icon:first-child:hover {
+  color: #2563eb;
   background: #eff6ff;
 }
 
-:host-context(.dark) .action-icons mat-icon:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
+:host-context(.dark) .action-icons mat-icon:first-child:hover {
+  color: #93c5fd;
+  background: rgba(59, 130, 246, 0.2);
 }
 
-.action-icons mat-icon:focus {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
+/* Delete icon - Red */
+.action-icons mat-icon:last-child {
+  color: #ef4444;
+}
+
+:host-context(.dark) .action-icons mat-icon:last-child {
+  color: #f87171;
+}
+
+.action-icons mat-icon:last-child:hover {
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+:host-context(.dark) .action-icons mat-icon:last-child:hover {
+  color: #fca5a5;
+  background: rgba(239, 68, 68, 0.2);
 }
 
 
@@ -317,4 +335,69 @@ img {
 .skeleton-header>div:nth-child(5),
 .skeleton-row>.skeleton-actions {
   width: 80px;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toolbar {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  /* Enable horizontal scrolling for table */
+  .table-card {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .products-table {
+    min-width: 600px;
+    /* Fixed minimum width to enable scrolling */
+  }
+
+  /* Adjust padding for mobile */
+  .products-table th,
+  .products-table td {
+    padding: 0.875rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  /* Make action icons larger for better touch targets */
+  .action-icons mat-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+  }
+
+  /* Adjust skeleton for mobile */
+  .skeleton-header,
+  .skeleton-row {
+    padding: 0.875rem 0.75rem;
+  }
+
+  /* Ensure content wrapper has proper padding */
+  .products-container {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .subtitle {
+    font-size: 13px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Further reduce padding on very small screens */
+  .products-table th,
+  .products-table td {
+    padding: 0.75rem 0.5rem;
+  }
 }
