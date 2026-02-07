@@ -360,61 +360,58 @@
  transition: all .2s ease
 }
 
-/* Edit icon - Blue */
 .action-icons mat-icon:nth-child(1) {
- color: #3b82f6;
+ color: #3b82f6
 }
 
 :host-context(.dark) .action-icons mat-icon:nth-child(1) {
- color: #60a5fa;
+ color: #60a5fa
 }
 
 .action-icons mat-icon:nth-child(1):hover {
  color: #2563eb;
- background: #eff6ff;
+ background: #eff6ff
 }
 
 :host-context(.dark) .action-icons mat-icon:nth-child(1):hover {
  color: #93c5fd;
- background: rgba(59, 130, 246, 0.2);
+ background: rgba(59, 130, 246, .2)
 }
 
-/* View icon - Green */
 .action-icons mat-icon:nth-child(2) {
- color: #10b981;
+ color: #10b981
 }
 
 :host-context(.dark) .action-icons mat-icon:nth-child(2) {
- color: #34d399;
+ color: #34d399
 }
 
 .action-icons mat-icon:nth-child(2):hover {
  color: #059669;
- background: #d1fae5;
+ background: #d1fae5
 }
 
 :host-context(.dark) .action-icons mat-icon:nth-child(2):hover {
  color: #6ee7b7;
- background: rgba(16, 185, 129, 0.2);
+ background: rgba(16, 185, 129, .2)
 }
 
-/* Delete icon - Red */
 .action-icons mat-icon:nth-child(3) {
- color: #ef4444;
+ color: #ef4444
 }
 
 :host-context(.dark) .action-icons mat-icon:nth-child(3) {
- color: #f87171;
+ color: #f87171
 }
 
 .action-icons mat-icon:nth-child(3):hover {
  color: #dc2626;
- background: #fef2f2;
+ background: #fef2f2
 }
 
 :host-context(.dark) .action-icons mat-icon:nth-child(3):hover {
  color: #fca5a5;
- background: rgba(239, 68, 68, 0.2);
+ background: rgba(239, 68, 68, .2)
 }
 
 .invoices-paginator {
@@ -428,58 +425,6 @@
  background: rgba(255, 255, 255, .02);
  color: #e5e7eb;
  border-top: 1px solid rgba(255, 255, 255, .05)
-}
-
-.invoices-paginator ::ng-deep .mat-mdc-paginator-container {
- padding: 1rem 1.5rem;
- min-height: 64px
-}
-
-.invoices-paginator ::ng-deep .mat-mdc-paginator-page-size-label,
-.invoices-paginator ::ng-deep .mat-mdc-paginator-range-label {
- color: #64748b;
- font-weight: 500;
- font-size: .875rem
-}
-
-:host-context(.dark) .invoices-paginator ::ng-deep .mat-mdc-paginator-page-size-label,
-:host-context(.dark) .invoices-paginator ::ng-deep .mat-mdc-paginator-range-label {
- color: #9ca3af
-}
-
-.invoices-paginator ::ng-deep .mat-mdc-icon-button {
- color: #64748b
-}
-
-:host-context(.dark) .invoices-paginator ::ng-deep .mat-mdc-icon-button {
- color: #9ca3af
-}
-
-.invoices-paginator ::ng-deep .mat-mdc-icon-button:hover {
- color: #3b82f6;
- background: #eff6ff
-}
-
-:host-context(.dark) .invoices-paginator ::ng-deep .mat-mdc-icon-button:hover {
- color: #fff;
- background: rgba(255, 255, 255, .1)
-}
-
-.invoices-paginator ::ng-deep .mat-mdc-icon-button[disabled] {
- color: #cbd5e1
-}
-
-:host-context(.dark) .invoices-paginator ::ng-deep .mat-mdc-icon-button[disabled] {
- color: #4b5563
-}
-
-.invoices-paginator ::ng-deep .mat-mdc-select {
- color: #475569;
- font-weight: 500
-}
-
-:host-context(.dark) .invoices-paginator ::ng-deep .mat-mdc-select {
- color: #e5e7eb
 }
 
 @media (max-width:768px) {
@@ -505,15 +450,13 @@
   max-width: 100%
  }
 
- /* Enable horizontal scrolling for table */
  .table-card {
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch
  }
 
  .invoices-table {
   min-width: 700px;
-  /* Fixed minimum width to enable scrolling */
   font-size: .875rem
  }
 
@@ -522,43 +465,41 @@
   padding: 1rem .75rem
  }
 
- /* Make action icons larger for better touch targets */
  .action-icons mat-icon {
   width: 36px;
   height: 36px;
-  font-size: 22px;
+  font-size: 22px
  }
 }
 
-@media (max-width: 480px) {
+@media (max-width:480px) {
  .invoices-container {
-  padding: 0.75rem;
+  padding: .75rem
  }
 
  .stat-card {
-  padding: 1rem;
+  padding: 1rem
  }
 
  .stat-icon {
   width: 48px;
-  height: 48px;
+  height: 48px
  }
 
  .stat-icon mat-icon {
   font-size: 24px;
   width: 24px;
-  height: 24px;
+  height: 24px
  }
 
  .stat-value {
-  font-size: 1.125rem;
+  font-size: 1.125rem
  }
 
- /* Further reduce padding on very small screens */
  .invoices-table th,
  .invoices-table td {
-  padding: 0.875rem 0.5rem;
-  font-size: 0.813rem;
+  padding: .875rem .5rem;
+  font-size: .813rem
  }
 }
 
