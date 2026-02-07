@@ -29,15 +29,26 @@
 .table-card {
   background: #ffffff;
   border-radius: 16px;
-  overflow: hidden;
   border: 1px solid #e2e8f0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
 :host-context(.dark) .table-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #ffffff;
+  max-width: 100%;
+}
+
+:host-context(.dark) .table-wrapper {
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .products-table {
@@ -204,6 +215,7 @@ img {
   font-weight: 600;
   font-size: 12px;
   border: 1px solid #c8e6c9;
+  white-space: nowrap;
 }
 
 :host-context(.dark) .price-pill {
@@ -350,7 +362,7 @@ img {
   }
 
   /* Enable horizontal scrolling for table */
-  .table-card {
+  .table-wrapper {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
