@@ -38,6 +38,7 @@ export class ProductsList {
   dataSource = new MatTableDataSource<Product>([]);
 
   constructor() {
+    this.productService.getProducts();
     effect(() => {
       this.dataSource.data = this.productService.products();
       if (this.paginator) {
